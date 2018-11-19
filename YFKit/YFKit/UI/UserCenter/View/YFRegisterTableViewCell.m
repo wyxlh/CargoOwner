@@ -64,7 +64,7 @@
     
     if (counting == 0)
     {
-        [self.codeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        [self.codeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
         self.codeBtn.userInteractionEnabled = YES;
         [self.timer  invalidate];
         self.timer  = nil;
