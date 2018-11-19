@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="YFOtherInputCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK3-Qw-eZb">
+                        <rect key="frame" x="5" y="24.5" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.35682046410000001" green="0.35688710210000002" blue="0.356816262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="字数不超过30个" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cMg-vt-eoJ">
+                        <rect key="frame" x="15" y="7" width="292.5" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="pkw-Xo-ZNP"/>
+                        </constraints>
+                        <color key="textColor" red="0.35682046410000001" green="0.35688710210000002" blue="0.356816262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="MK3-Qw-eZb" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="283-Oc-KvH"/>
+                <constraint firstItem="MK3-Qw-eZb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="2pA-wS-QvG"/>
+                <constraint firstItem="cMg-vt-eoJ" firstAttribute="centerY" secondItem="MK3-Qw-eZb" secondAttribute="centerY" id="Rzc-aT-DdO"/>
+                <constraint firstItem="cMg-vt-eoJ" firstAttribute="leading" secondItem="MK3-Qw-eZb" secondAttribute="trailing" constant="10" id="kxM-08-ux5"/>
+                <constraint firstAttribute="trailing" secondItem="cMg-vt-eoJ" secondAttribute="trailing" constant="12.5" id="z7w-Ac-WYU"/>
+            </constraints>
+            <connections>
+                <outlet property="textField" destination="cMg-vt-eoJ" id="O9I-gp-c37"/>
+            </connections>
+            <point key="canvasLocation" x="-37" y="39"/>
+        </collectionViewCell>
+    </objects>
+</document>

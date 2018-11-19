@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="YFSpecialDetailOtherFeeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保价费:5元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W3-Tu-SeM">
+                        <rect key="frame" x="45" y="8" width="70" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19.5" id="XEo-qY-RiJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手续费:1元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpJ-LX-atN">
+                        <rect key="frame" x="45" y="33.5" width="68" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19.5" id="lRh-2h-TQW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信息费:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGQ-0G-H9T">
+                        <rect key="frame" x="45" y="59" width="47" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19.5" id="zPj-Si-yJb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提货费:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTc-rc-4Kh">
+                        <rect key="frame" x="45" y="110" width="47" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19.5" id="fhy-ZA-KD3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回单费:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGH-sO-JRD">
+                        <rect key="frame" x="45" y="135.5" width="47" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="送货费:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZ1-ve-hYu">
+                        <rect key="frame" x="45" y="84.5" width="47" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19.5" id="qsv-m6-F5X"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（声明价值:1000元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke7-11-ryX">
+                        <rect key="frame" x="115" y="10.5" width="118" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（代付款:1111元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpX-68-eXl">
+                        <rect key="frame" x="113" y="36" width="99.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1W3-Tu-SeM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1ZL-NN-iuE"/>
+                    <constraint firstItem="fGH-sO-JRD" firstAttribute="top" secondItem="XTc-rc-4Kh" secondAttribute="bottom" constant="6" id="2RO-Fb-0hn"/>
+                    <constraint firstItem="qpX-68-eXl" firstAttribute="leading" secondItem="zpJ-LX-atN" secondAttribute="trailing" id="5U9-ke-sL5"/>
+                    <constraint firstItem="zpJ-LX-atN" firstAttribute="top" secondItem="1W3-Tu-SeM" secondAttribute="bottom" constant="6" id="72k-fd-PSr"/>
+                    <constraint firstItem="qpX-68-eXl" firstAttribute="centerY" secondItem="zpJ-LX-atN" secondAttribute="centerY" id="AsF-Lv-Ihw"/>
+                    <constraint firstItem="XTc-rc-4Kh" firstAttribute="top" secondItem="EZ1-ve-hYu" secondAttribute="bottom" constant="6" id="Crc-uL-VTK"/>
+                    <constraint firstItem="fGH-sO-JRD" firstAttribute="leading" secondItem="XTc-rc-4Kh" secondAttribute="leading" id="FEU-wO-CWj"/>
+                    <constraint firstItem="EZ1-ve-hYu" firstAttribute="leading" secondItem="yGQ-0G-H9T" secondAttribute="leading" id="FQQ-ow-9z3"/>
+                    <constraint firstItem="Ke7-11-ryX" firstAttribute="leading" secondItem="1W3-Tu-SeM" secondAttribute="trailing" id="IGr-5E-Kib"/>
+                    <constraint firstItem="XTc-rc-4Kh" firstAttribute="leading" secondItem="EZ1-ve-hYu" secondAttribute="leading" id="MCg-gE-cm6"/>
+                    <constraint firstItem="zpJ-LX-atN" firstAttribute="leading" secondItem="1W3-Tu-SeM" secondAttribute="leading" id="Mp9-XN-kNd"/>
+                    <constraint firstItem="yGQ-0G-H9T" firstAttribute="leading" secondItem="zpJ-LX-atN" secondAttribute="leading" id="WAH-jC-dTy"/>
+                    <constraint firstItem="EZ1-ve-hYu" firstAttribute="top" secondItem="yGQ-0G-H9T" secondAttribute="bottom" constant="6" id="b8h-cd-2mA"/>
+                    <constraint firstItem="1W3-Tu-SeM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="45" id="img-Ea-Lja"/>
+                    <constraint firstItem="yGQ-0G-H9T" firstAttribute="top" secondItem="zpJ-LX-atN" secondAttribute="bottom" constant="6" id="j78-2Z-vYK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="fGH-sO-JRD" secondAttribute="bottom" constant="1.5" id="nRO-SJ-Xzp"/>
+                    <constraint firstItem="Ke7-11-ryX" firstAttribute="centerY" secondItem="1W3-Tu-SeM" secondAttribute="centerY" id="vJJ-cT-tfi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="deliveryFree" destination="EZ1-ve-hYu" id="vob-Ba-m2N"/>
+                <outlet property="generationFee" destination="qpX-68-eXl" id="9gh-Oq-Hql"/>
+                <outlet property="informationFee" destination="yGQ-0G-H9T" id="k8F-Jn-IhS"/>
+                <outlet property="proceduresFee" destination="zpJ-LX-atN" id="XHr-Nh-GPF"/>
+                <outlet property="protectionFee" destination="1W3-Tu-SeM" id="5LL-KC-uqU"/>
+                <outlet property="returnFee" destination="fGH-sO-JRD" id="BOX-dB-RGd"/>
+                <outlet property="takeFee" destination="XTc-rc-4Kh" id="eOV-df-fzh"/>
+                <outlet property="valueFee" destination="Ke7-11-ryX" id="JjU-FL-PyS"/>
+            </connections>
+            <point key="canvasLocation" x="-533" y="89"/>
+        </tableViewCell>
+    </objects>
+</document>

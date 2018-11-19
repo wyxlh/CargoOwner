@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YFAddressFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogc-tv-RRN">
+                    <rect key="frame" x="16" y="16.5" width="110" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="J9h-E6-VYW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="设为默认地址" image="cancenDefault">
+                        <color key="titleColor" red="0.49019607840000001" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="setDefault"/>
+                    <connections>
+                        <action selector="clickBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="oUh-mh-66g"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBx-bp-Qax">
+                    <rect key="frame" x="210" y="12" width="64" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="删除">
+                        <color key="titleColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="clickBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="W3P-fg-qGx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-hF-wok">
+                    <rect key="frame" x="295" y="12" width="64" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="FSe-RO-N9j"/>
+                        <constraint firstAttribute="height" constant="26" id="a5M-SN-6c1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="编辑">
+                        <color key="titleColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="clickBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="KwP-TT-hdm"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0a9-hF-wok" secondAttribute="trailing" constant="16" id="Q88-ta-AxC"/>
+                <constraint firstItem="eBx-bp-Qax" firstAttribute="centerY" secondItem="ogc-tv-RRN" secondAttribute="centerY" id="QqW-tk-Hqp"/>
+                <constraint firstItem="eBx-bp-Qax" firstAttribute="height" secondItem="0a9-hF-wok" secondAttribute="height" id="Ue4-bw-cGh"/>
+                <constraint firstItem="0a9-hF-wok" firstAttribute="leading" secondItem="eBx-bp-Qax" secondAttribute="trailing" constant="21" id="g6u-jb-DD1"/>
+                <constraint firstItem="ogc-tv-RRN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="hdz-pq-GfS"/>
+                <constraint firstItem="0a9-hF-wok" firstAttribute="centerY" secondItem="ogc-tv-RRN" secondAttribute="centerY" id="nQh-mG-40h"/>
+                <constraint firstItem="ogc-tv-RRN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="u5F-kG-M0X"/>
+                <constraint firstItem="eBx-bp-Qax" firstAttribute="width" secondItem="0a9-hF-wok" secondAttribute="width" id="yOC-Jn-zIi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="defaultBtn" destination="ogc-tv-RRN" id="yXF-hH-40O"/>
+                <outlet property="leftBtn" destination="eBx-bp-Qax" id="Jpl-Fr-2m8"/>
+                <outlet property="rightBtn" destination="0a9-hF-wok" id="tZn-gu-2sQ"/>
+            </connections>
+            <point key="canvasLocation" x="-88.799999999999997" y="-3.5982008995502253"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancenDefault" width="16.5" height="16.5"/>
+        <image name="setDefault" width="16.5" height="16.5"/>
+    </resources>
+</document>

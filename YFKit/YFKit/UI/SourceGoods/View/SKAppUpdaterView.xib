@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SKAppUpdaterView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbu-Iy-YTj">
+                    <rect key="frame" x="30" y="209" width="315" height="249"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxN-ag-mDM">
+                            <rect key="frame" x="0.0" y="199" width="157" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="稍后再说">
+                                <color key="titleColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="closeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="89m-GS-fME"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是2.2版本这是2.2版本这是2.2版本这是2.2版本这是2.2版本" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aX7-TI-zEJ">
+                            <rect key="frame" x="20" y="133" width="275" height="31.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsD-xu-z4v">
+                            <rect key="frame" x="0.0" y="198.5" width="315" height="0.5"/>
+                            <color key="backgroundColor" red="0.89408797025680542" green="0.89001554250717163" blue="0.90228742361068726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="hg8-xU-cJR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1w8-WL-TZH">
+                            <rect key="frame" x="158" y="199" width="157" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="立即下载">
+                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="upDateBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="pqz-2Z-202"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="updataVersion" translatesAutoresizingMaskIntoConstraints="NO" id="YLz-x0-Rg5">
+                            <rect key="frame" x="123.5" y="24" width="68" height="68"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="YLz-x0-Rg5" secondAttribute="height" multiplier="1:1" id="7M9-Sh-8xP"/>
+                                <constraint firstAttribute="width" constant="68" id="cGB-Al-QtF"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本更新" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2p-eS-VeO">
+                            <rect key="frame" x="129.5" y="104" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oa0-zA-mej">
+                            <rect key="frame" x="157" y="199" width="1" height="50"/>
+                            <color key="backgroundColor" red="0.89408797029999998" green="0.89001554250000003" blue="0.90228742360000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="5CJ-g1-S46"/>
+                                <constraint firstAttribute="width" constant="0.5" id="liv-rd-BmM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button hidden="YES" opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzI-Yf-OiW">
+                            <rect key="frame" x="0.0" y="199" width="315" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="立即更新"/>
+                            <connections>
+                                <action selector="upDateBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="ayN-Bn-OOo"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="aX7-TI-zEJ" firstAttribute="top" secondItem="t2p-eS-VeO" secondAttribute="bottom" constant="12" id="3uK-YV-oef"/>
+                        <constraint firstAttribute="bottom" secondItem="GxN-ag-mDM" secondAttribute="bottom" id="85n-kS-3jo"/>
+                        <constraint firstItem="IzI-Yf-OiW" firstAttribute="leading" secondItem="Zbu-Iy-YTj" secondAttribute="leading" id="Cpi-02-mXZ"/>
+                        <constraint firstItem="t2p-eS-VeO" firstAttribute="centerX" secondItem="YLz-x0-Rg5" secondAttribute="centerX" id="G10-0J-xaW"/>
+                        <constraint firstItem="Oa0-zA-mej" firstAttribute="centerX" secondItem="Zbu-Iy-YTj" secondAttribute="centerX" id="HWj-AA-5pX"/>
+                        <constraint firstAttribute="trailing" secondItem="1w8-WL-TZH" secondAttribute="trailing" id="Hov-un-tq7"/>
+                        <constraint firstAttribute="bottom" secondItem="Oa0-zA-mej" secondAttribute="bottom" id="KxV-5Q-1vJ"/>
+                        <constraint firstAttribute="trailing" secondItem="aX7-TI-zEJ" secondAttribute="trailing" constant="20" id="NdK-5G-csO"/>
+                        <constraint firstAttribute="trailing" secondItem="jsD-xu-z4v" secondAttribute="trailing" id="NwM-OJ-vi6"/>
+                        <constraint firstItem="Oa0-zA-mej" firstAttribute="top" secondItem="jsD-xu-z4v" secondAttribute="bottom" id="P10-fd-O4p"/>
+                        <constraint firstItem="GxN-ag-mDM" firstAttribute="leading" secondItem="Zbu-Iy-YTj" secondAttribute="leading" id="PsN-Gy-4hE"/>
+                        <constraint firstItem="YLz-x0-Rg5" firstAttribute="top" secondItem="Zbu-Iy-YTj" secondAttribute="top" constant="24" id="WXH-59-bDT"/>
+                        <constraint firstItem="GxN-ag-mDM" firstAttribute="top" secondItem="jsD-xu-z4v" secondAttribute="bottom" id="ZDi-H5-Xcj"/>
+                        <constraint firstAttribute="width" secondItem="Zbu-Iy-YTj" secondAttribute="height" multiplier="67:53" id="bSr-Ip-SUJ"/>
+                        <constraint firstItem="1w8-WL-TZH" firstAttribute="leading" secondItem="Oa0-zA-mej" secondAttribute="trailing" id="c7W-rN-34p"/>
+                        <constraint firstItem="Oa0-zA-mej" firstAttribute="leading" secondItem="GxN-ag-mDM" secondAttribute="trailing" id="gSD-Ta-rDK"/>
+                        <constraint firstItem="YLz-x0-Rg5" firstAttribute="centerX" secondItem="Zbu-Iy-YTj" secondAttribute="centerX" id="hIm-yc-iJV"/>
+                        <constraint firstItem="aX7-TI-zEJ" firstAttribute="leading" secondItem="Zbu-Iy-YTj" secondAttribute="leading" constant="20" id="hoh-rt-hdj"/>
+                        <constraint firstAttribute="trailing" secondItem="IzI-Yf-OiW" secondAttribute="trailing" id="iaN-fW-YVF"/>
+                        <constraint firstItem="t2p-eS-VeO" firstAttribute="top" secondItem="YLz-x0-Rg5" secondAttribute="bottom" constant="12" id="nah-3u-0oN"/>
+                        <constraint firstItem="1w8-WL-TZH" firstAttribute="top" secondItem="jsD-xu-z4v" secondAttribute="bottom" id="r13-gD-9Dc"/>
+                        <constraint firstAttribute="bottom" secondItem="1w8-WL-TZH" secondAttribute="bottom" id="soN-Lf-0od"/>
+                        <constraint firstItem="jsD-xu-z4v" firstAttribute="leading" secondItem="Zbu-Iy-YTj" secondAttribute="leading" id="tvb-Ju-9sJ"/>
+                        <constraint firstItem="IzI-Yf-OiW" firstAttribute="top" secondItem="jsD-xu-z4v" secondAttribute="bottom" id="vTk-MS-l06"/>
+                        <constraint firstAttribute="bottom" secondItem="IzI-Yf-OiW" secondAttribute="bottom" id="wdm-OS-oF3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Zbu-Iy-YTj" secondAttribute="trailing" constant="30" id="Ofu-o4-Bmh"/>
+                <constraint firstItem="Zbu-Iy-YTj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eM6-2F-stx"/>
+                <constraint firstItem="Zbu-Iy-YTj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="qyE-EH-eKR"/>
+                <constraint firstItem="Zbu-Iy-YTj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rsi-El-deA"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="UpdateButton" destination="1w8-WL-TZH" id="2Fe-dZ-qel"/>
+                <outlet property="baView" destination="Zbu-Iy-YTj" id="fTw-ho-4qV"/>
+                <outlet property="cancel" destination="GxN-ag-mDM" id="IO8-qw-btk"/>
+                <outlet property="contentLabel" destination="aX7-TI-zEJ" id="w3x-38-NPw"/>
+                <outlet property="oneUpdataBtn" destination="IzI-Yf-OiW" id="OQe-xw-Mvb"/>
+            </connections>
+            <point key="canvasLocation" x="-2.5" y="-218.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="updataVersion" width="74" height="74"/>
+    </resources>
+</document>

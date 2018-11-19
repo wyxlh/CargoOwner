@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="YFChooseDriverTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="driver" translatesAutoresizingMaskIntoConstraints="NO" id="cHE-K5-qc0">
+                        <rect key="frame" x="15" y="17.5" width="36.5" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="cHE-K5-qc0" secondAttribute="height" multiplier="9:10" id="FiS-UA-oN7"/>
+                            <constraint firstAttribute="width" constant="36.5" id="SUn-rY-lIe"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="僧可    交易次数  10次" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pja-Xt-Mgi">
+                        <rect key="frame" x="66.5" y="16.5" width="138" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.42336291069999998" green="0.427421838" blue="0.43152362109999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车牌号码:沪 A12345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suz-6c-mK4">
+                        <rect key="frame" x="66.5" y="41.5" width="129" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.42336291069999998" green="0.427421838" blue="0.43152362109999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGY-fA-tzJ">
+                        <rect key="frame" x="236" y="24" width="72" height="27"/>
+                        <color key="backgroundColor" red="0.0039215686269999999" green="0.47058823529999999" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="94y-Vz-Xrv"/>
+                            <constraint firstAttribute="height" constant="27" id="pxY-0c-ZX0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="下单给他">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08D-5s-8Gi">
+                        <rect key="frame" x="0.0" y="73.5" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.92527258396148682" green="0.92941254377365112" blue="0.93342864513397217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="BVJ-9f-MRp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.42336291069999998" green="0.427421838" blue="0.43152362109999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IGY-fA-tzJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="16p-ba-K34"/>
+                    <constraint firstItem="Pja-Xt-Mgi" firstAttribute="leading" secondItem="cHE-K5-qc0" secondAttribute="trailing" constant="15" id="8yv-09-oL3"/>
+                    <constraint firstItem="08D-5s-8Gi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Hcq-Ts-5Wa"/>
+                    <constraint firstItem="suz-6c-mK4" firstAttribute="top" secondItem="Pja-Xt-Mgi" secondAttribute="bottom" constant="8" id="Lqt-Rz-lTS"/>
+                    <constraint firstItem="Pja-Xt-Mgi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16.5" id="WWc-T5-81Z"/>
+                    <constraint firstItem="suz-6c-mK4" firstAttribute="leading" secondItem="Pja-Xt-Mgi" secondAttribute="leading" id="dSD-S8-R9l"/>
+                    <constraint firstItem="cHE-K5-qc0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="hEm-qv-3eW"/>
+                    <constraint firstAttribute="trailing" secondItem="IGY-fA-tzJ" secondAttribute="trailing" constant="12" id="iBE-EW-sDp"/>
+                    <constraint firstAttribute="trailing" secondItem="08D-5s-8Gi" secondAttribute="trailing" id="nsN-Pz-xtE"/>
+                    <constraint firstItem="cHE-K5-qc0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ppK-ME-gGn"/>
+                    <constraint firstAttribute="bottom" secondItem="08D-5s-8Gi" secondAttribute="bottom" id="xQe-Kj-jng"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="LicenseNum" destination="suz-6c-mK4" id="WjG-n6-XoV"/>
+                <outlet property="PlaceOrderBtn" destination="IGY-fA-tzJ" id="4OH-1f-gBC"/>
+                <outlet property="imgView" destination="cHE-K5-qc0" id="UkJ-xW-9pP"/>
+                <outlet property="name" destination="Pja-Xt-Mgi" id="HJl-hO-7y5"/>
+            </connections>
+            <point key="canvasLocation" x="-132" y="17.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="driver" width="36" height="40"/>
+    </resources>
+</document>

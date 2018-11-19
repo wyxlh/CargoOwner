@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YFGoodsNameView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1C-oF-gzP">
+                    <rect key="frame" x="0.0" y="616.5" width="375" height="0.5"/>
+                    <color key="backgroundColor" red="0.83917933700000003" green="0.83503574130000002" blue="0.85147088770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="Zf1-so-tHb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEA-sG-fuH">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Ltf-Ui-vKb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clickSaveBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="BAR-zE-IOS"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="r5O-zt-nfb">
+                    <rect key="frame" x="0.0" y="356.5" width="375" height="260"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="fdp-GE-2H1"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Zf-EI-sPG">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="r5O-zt-nfb" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="8XA-0f-J2E"/>
+                <constraint firstItem="oEA-sG-fuH" firstAttribute="top" secondItem="G1C-oF-gzP" secondAttribute="bottom" id="Mrj-GT-vE2"/>
+                <constraint firstItem="G1C-oF-gzP" firstAttribute="top" secondItem="r5O-zt-nfb" secondAttribute="bottom" id="Z8c-ZW-Hhl"/>
+                <constraint firstItem="oEA-sG-fuH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="c8v-65-sxX"/>
+                <constraint firstAttribute="bottom" secondItem="oEA-sG-fuH" secondAttribute="bottom" id="g18-sp-ofM"/>
+                <constraint firstItem="r5O-zt-nfb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jnR-6O-up9"/>
+                <constraint firstAttribute="trailing" secondItem="oEA-sG-fuH" secondAttribute="trailing" id="kpn-Eu-cdG"/>
+                <constraint firstAttribute="trailing" secondItem="G1C-oF-gzP" secondAttribute="trailing" id="mBY-3Z-E14"/>
+                <constraint firstItem="G1C-oF-gzP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="skF-im-T8Z"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="r5O-zt-nfb" id="sXt-Pm-4gM"/>
+                <outlet property="heightCons" destination="fdp-GE-2H1" id="ZVg-nh-hcp"/>
+            </connections>
+            <point key="canvasLocation" x="-201" y="24"/>
+        </view>
+    </objects>
+</document>

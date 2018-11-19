@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YFNullView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noMoreData" translatesAutoresizingMaskIntoConstraints="NO" id="afT-OX-UbI">
+                    <rect key="frame" x="113" y="275" width="149" height="117"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux1-hl-4vn">
+                    <rect key="frame" x="156.5" y="402" width="62" height="30"/>
+                    <state key="normal" title="暂无数据">
+                        <color key="titleColor" red="0.61603993180000005" green="0.60004729030000004" blue="0.59565311669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="afT-OX-UbI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1oD-kH-tN5"/>
+                <constraint firstItem="ux1-hl-4vn" firstAttribute="centerX" secondItem="afT-OX-UbI" secondAttribute="centerX" id="VGd-hd-cIe"/>
+                <constraint firstItem="afT-OX-UbI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fqE-CS-bWh"/>
+                <constraint firstItem="ux1-hl-4vn" firstAttribute="top" secondItem="afT-OX-UbI" secondAttribute="bottom" constant="10" id="iFs-G0-xsP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imgView" destination="afT-OX-UbI" id="2By-1B-wkt"/>
+                <outlet property="noMoreBtn" destination="ux1-hl-4vn" id="U0t-ne-GOH"/>
+            </connections>
+            <point key="canvasLocation" x="-158" y="26"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="noMoreData" width="149" height="117"/>
+    </resources>
+</document>

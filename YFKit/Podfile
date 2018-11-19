@@ -1,0 +1,23 @@
+platform :ios, ‘8.0’
+inhibit_all_warnings!                        #去除警告
+target “YFKit” do
+
+pod 'SDWebImage', '~> 4.2.2'                 #图片缓存
+pod 'AFNetworking', '~> 3.1.0'               #网络请求
+pod 'MJRefresh', '~> 3.1.12'                 #刷新
+pod 'MJExtension', '~> 3.0.13'               #Model
+pod 'IQKeyboardManager', '~> 5.0.6'          #键盘管理
+pod 'AMapLocation'                           #定位 SDK
+pod 'AMap3DMap'                              #3D地图SDK
+pod 'AMapSearch'                             #搜索服务SDK
+pod 'KSPhotoBrowser', '~> 0.1.4'             #图片浏览器
+pod 'ReactiveCocoa', :git => 'https://github.com/zhao0/ReactiveCocoa.git', :tag => '2.5.2'
+pod 'Bugly'                                  #检测崩溃日志
+pod 'UMCCommon'                              #友盟分享
+pod 'UMCSecurityPlugins'                     #友盟分享
+pod 'UMCShare/Social/ReducedWeChat'          #友盟分享
+pod 'UMCAnalytics'                           #统计
+pod 'UMCSecurityPlugins'                     #统计
+pod 'SDCycleScrollView', '~> 1.75'           #无线轮播
+pod 'TZImagePickerController'                #图片浏览器
+end

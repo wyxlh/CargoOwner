@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YFShareQRcodeViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareQRcodeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zs1-Sr-bzA">
+                    <rect key="frame" x="28.5" y="40" width="318" height="461"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbB-S5-4Rl">
+                    <rect key="frame" x="169" y="560" width="37" height="37"/>
+                    <state key="normal" image="shareClose"/>
+                    <connections>
+                        <action selector="clickDisapper:" destination="-1" eventType="touchUpInside" id="0WI-cZ-fZr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.47058823529411764" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BbB-S5-4Rl" firstAttribute="centerX" secondItem="zs1-Sr-bzA" secondAttribute="centerX" id="7XZ-tf-wvM"/>
+                <constraint firstAttribute="bottom" secondItem="BbB-S5-4Rl" secondAttribute="bottom" constant="70" id="N8F-xl-5cn"/>
+                <constraint firstItem="zs1-Sr-bzA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V53-x7-rTq"/>
+                <constraint firstItem="zs1-Sr-bzA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="btl-Ae-YtI"/>
+            </constraints>
+            <point key="canvasLocation" x="-95.200000000000003" y="129.98500749625188"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="shareClose" width="37" height="37"/>
+        <image name="shareQRcodeLogo" width="318.5" height="461"/>
+    </resources>
+</document>

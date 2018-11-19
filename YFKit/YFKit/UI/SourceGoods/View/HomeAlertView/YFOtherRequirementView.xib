@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YFOtherRequirementView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuX-dH-1ih">
+                    <rect key="frame" x="0.0" y="617" width="375" height="0.0"/>
+                    <color key="backgroundColor" red="0.83917933700000003" green="0.83503574130000002" blue="0.85147088770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="4X2-cQ-VX8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfz-dU-rem">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Aeg-4c-Ld3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clickSaveBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="mWO-mW-T3e"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-IZ-lkd">
+                    <rect key="frame" x="0.0" y="367" width="375" height="250"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="UwX-TB-HQ8"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="92a-6y-t3f">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="TuX-dH-1ih" firstAttribute="top" secondItem="cO6-IZ-lkd" secondAttribute="bottom" id="ITT-jw-KeC"/>
+                <constraint firstItem="Qfz-dU-rem" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Nz3-GT-LbS"/>
+                <constraint firstAttribute="trailing" secondItem="TuX-dH-1ih" secondAttribute="trailing" id="UrG-sC-YgM"/>
+                <constraint firstAttribute="trailing" secondItem="cO6-IZ-lkd" secondAttribute="trailing" id="XBd-Ik-ZKO"/>
+                <constraint firstItem="cO6-IZ-lkd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aQo-jS-Sf6"/>
+                <constraint firstItem="TuX-dH-1ih" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rYN-0x-pTj"/>
+                <constraint firstItem="Qfz-dU-rem" firstAttribute="top" secondItem="TuX-dH-1ih" secondAttribute="bottom" id="tVi-qB-gfr"/>
+                <constraint firstItem="Qfz-dU-rem" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="wzE-jv-yoZ"/>
+                <constraint firstAttribute="trailing" secondItem="Qfz-dU-rem" secondAttribute="trailing" id="yG0-62-Le5"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="cO6-IZ-lkd" id="gaD-Sa-QE5"/>
+                <outlet property="heightCons" destination="UwX-TB-HQ8" id="FHK-od-v9U"/>
+            </connections>
+            <point key="canvasLocation" x="-60" y="32"/>
+        </view>
+    </objects>
+</document>

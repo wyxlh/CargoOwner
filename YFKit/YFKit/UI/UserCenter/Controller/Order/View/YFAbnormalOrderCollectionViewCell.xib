@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="YFAbnormalOrderCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="异常说明 : " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5B-xJ-nle">
+                        <rect key="frame" x="20" y="50" width="335" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP4-WT-01B">
+                        <rect key="frame" x="0.0" y="97.5" width="375" height="0.5"/>
+                        <color key="backgroundColor" red="0.90174561740000003" green="0.90588176249999997" blue="0.909901917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="oWz-UF-P1U"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-7s-iXd">
+                        <rect key="frame" x="0.0" y="48" width="375" height="0.5"/>
+                        <color key="backgroundColor" red="0.90174561740000003" green="0.90588176249999997" blue="0.909901917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="sQF-1D-aMg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="异常类型 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Db-MI-Ih4">
+                        <rect key="frame" x="20" y="15" width="79" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.33316335079999998" green="0.33714586499999999" blue="0.3454158604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jP4-WT-01B" secondAttribute="trailing" id="2EY-M2-Qry"/>
+                <constraint firstAttribute="trailing" secondItem="IKt-7s-iXd" secondAttribute="trailing" id="FlL-dz-hsb"/>
+                <constraint firstItem="IKt-7s-iXd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="48" id="Gz8-vb-0Oo"/>
+                <constraint firstItem="4Db-MI-Ih4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="aZ4-0U-JfU"/>
+                <constraint firstItem="IKt-7s-iXd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="adg-88-Hfr"/>
+                <constraint firstItem="4Db-MI-Ih4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="dsM-jF-xko"/>
+                <constraint firstAttribute="bottom" secondItem="jP4-WT-01B" secondAttribute="bottom" id="lcm-ef-O3y"/>
+                <constraint firstItem="O5B-xJ-nle" firstAttribute="leading" secondItem="4Db-MI-Ih4" secondAttribute="leading" id="lfD-rf-XDg"/>
+                <constraint firstItem="jP4-WT-01B" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rum-A6-Lvy"/>
+                <constraint firstItem="O5B-xJ-nle" firstAttribute="top" secondItem="4Db-MI-Ih4" secondAttribute="bottom" constant="15" id="uu0-R2-ntw"/>
+                <constraint firstAttribute="trailing" secondItem="O5B-xJ-nle" secondAttribute="trailing" constant="20" id="xE5-LN-qvt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="abnormalExplain" destination="O5B-xJ-nle" id="TJ3-F4-Fyl"/>
+                <outlet property="abnormalType" destination="4Db-MI-Ih4" id="wmA-xG-dxR"/>
+            </connections>
+            <point key="canvasLocation" x="-121.5" y="1"/>
+        </collectionViewCell>
+    </objects>
+</document>

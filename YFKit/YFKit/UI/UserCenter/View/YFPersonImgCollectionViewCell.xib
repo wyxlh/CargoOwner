@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="YFPersonImgCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="137"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placehoderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="0OH-mZ-GBW">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="0OH-mZ-GBW" secondAttribute="height" multiplier="1:1" id="GE5-we-dcE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身份证正面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCM-0G-sHQ">
+                        <rect key="frame" x="0.0" y="110" width="100" height="17"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传身份证正面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqF-dJ-8hA">
+                        <rect key="frame" x="0.0" y="83" width="100" height="17"/>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.4823529412" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ZqF-dJ-8hA" firstAttribute="bottom" secondItem="0OH-mZ-GBW" secondAttribute="bottom" id="0xW-IO-0pf"/>
+                <constraint firstAttribute="trailing" secondItem="ZqF-dJ-8hA" secondAttribute="trailing" id="49j-bI-fLv"/>
+                <constraint firstItem="FCM-0G-sHQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="E60-H4-9np"/>
+                <constraint firstAttribute="trailing" secondItem="0OH-mZ-GBW" secondAttribute="trailing" id="FG9-Rg-BCb"/>
+                <constraint firstItem="ZqF-dJ-8hA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="T9A-Yq-3q1"/>
+                <constraint firstItem="0OH-mZ-GBW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bfo-aK-VQI"/>
+                <constraint firstItem="0OH-mZ-GBW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="btA-v9-jJQ"/>
+                <constraint firstAttribute="trailing" secondItem="FCM-0G-sHQ" secondAttribute="trailing" id="kjQ-aV-bDW"/>
+                <constraint firstItem="FCM-0G-sHQ" firstAttribute="top" secondItem="0OH-mZ-GBW" secondAttribute="bottom" constant="10" id="mQ6-yU-TDA"/>
+            </constraints>
+            <connections>
+                <outlet property="imgView" destination="0OH-mZ-GBW" id="fTV-l0-jcY"/>
+                <outlet property="noPhotoLbl" destination="ZqF-dJ-8hA" id="WG8-9Z-l3p"/>
+                <outlet property="title" destination="FCM-0G-sHQ" id="Mpl-by-AUY"/>
+            </connections>
+            <point key="canvasLocation" x="-735" y="-130"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="placehoderLogo" width="70" height="70"/>
+    </resources>
+</document>

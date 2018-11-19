@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="YFHomeNearCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="205" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="205" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n68-iO-yEX">
+                        <rect key="frame" x="82.5" y="10" width="40" height="40"/>
+                        <color key="backgroundColor" red="0.15686274510000001" green="0.76862745099999996" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="fK7-x3-ZyC"/>
+                            <constraint firstAttribute="width" secondItem="n68-iO-yEX" secondAttribute="height" multiplier="1:1" id="vrT-UW-dVi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUN-Jh-etM">
+                        <rect key="frame" x="82.5" y="55" width="40" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.34509803919999998" green="0.34901960780000002" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oUN-Jh-etM" firstAttribute="top" secondItem="n68-iO-yEX" secondAttribute="bottom" constant="5" id="6ta-BA-yp8"/>
+                <constraint firstItem="n68-iO-yEX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="EK0-cl-xSH"/>
+                <constraint firstItem="oUN-Jh-etM" firstAttribute="centerX" secondItem="n68-iO-yEX" secondAttribute="centerX" id="rg4-3i-WmF"/>
+                <constraint firstItem="n68-iO-yEX" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="yhW-aW-V7d"/>
+            </constraints>
+            <size key="customSize" width="205" height="99"/>
+            <connections>
+                <outlet property="logo" destination="n68-iO-yEX" id="awX-Hi-vvg"/>
+                <outlet property="title" destination="oUN-Jh-etM" id="n8w-lc-FdU"/>
+            </connections>
+            <point key="canvasLocation" x="-124.5" y="-5.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
