@@ -29,7 +29,7 @@
 }
 - (IBAction)textFieldDidChange:(UITextField *)textField {
     DLog(@"%@",textField.text);
-    //前17位w必须为数字
+    //前17位必须为数字
     if (![textField.text isNumberString] && textField.text.length < 18) {
         if (textField.text.length == 1) {
             textField.text      = @"";
@@ -42,6 +42,9 @@
         NSString *lastString    = [textField.text substringWithRange:NSMakeRange(17, 1)];
         if (![lastString isNumberString] && ![lastString isEqualToString:@"x"] && ![lastString isEqualToString:@"X"]) {
             textField.text      = [textField.text substringWithRange:NSMakeRange(0, 17)];
+        }else if ([lastString isEqualToString:@"x"]){
+            NSString *idCard    = [textField.text substringWithRange:NSMakeRange(0, 17)];
+            textField.text      = [NSString stringWithFormat:@"%@X",idCard];
         }
     }
     //首先 身份证号最多18位

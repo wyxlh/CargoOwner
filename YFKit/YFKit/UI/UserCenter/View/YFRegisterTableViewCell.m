@@ -158,6 +158,14 @@
             [self.codeBtn setTitleColor:GrayColor forState:0];
         }
     }
+    //邀请人
+    if (textField == self.InviterPhone) {
+        //如果大于11位 只去11位
+        if (textField.text.length > 11) {
+            textField.text = [textField.text substringWithRange:NSMakeRange(0, 11)];
+        }
+    }
+    
     //验证密码
     if ((textField == self.passWordTF || textField == self.savePswTF) && textField.text.length > 15) {
         textField.text = [textField.text substringWithRange:NSMakeRange(0, 15)];

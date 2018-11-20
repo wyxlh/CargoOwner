@@ -463,10 +463,9 @@
             }
         }
         
-        if (nameArr.count > 1 && ![nameArr[0] isEqualToString:nameArr[1]]) {
+        if (nameArr.count > 1) {
             return [NSString stringWithFormat:@"%@/%@",nameArr[0],nameArr[1]];
         }
-        return nameArr[0];
     }
     return @"";
 }

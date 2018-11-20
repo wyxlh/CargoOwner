@@ -121,16 +121,6 @@
 }
 
 -(void)rightTitleButtonClick:(UIButton *)sender{
-//    if (!self.mainModel.systemDef && !IS_CARGO_OWNER) {
-//
-//        [self showAlertViewControllerTitle:wenxinTitle Message:@"请联系管理员修改 021-32581211-8060" CancelTitle:@"取消" CancelTextColor:CancelColor ConfirmTitle:@"确定" ConfirmTextColor:ConfirmColor cancelBlock:^{
-//
-//        } confirmBlock:^{
-//            NSString *driverMobile = @"tel:021-32581211-8060";
-//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:driverMobile]];
-//        }];
-//        return;
-//    }
     sender.selected                          = !sender.selected;
     self.isUpdata                            = sender.selected;
     //如果上传的图片 但是没有提交 就点击了取消按钮 那么就直接把之上传的图片移除掉

@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.867345"
+            timestampString = "564378235.4758199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "-updataUserInfo"
             landmarkType = "7">
          </BreakpointContent>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.867938"
+            timestampString = "564378235.475902"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-updataUserInfo"
             landmarkType = "7">
          </BreakpointContent>
@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.868407"
+            timestampString = "564378235.475965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "-updataUserRelevantPhoto:image:"
             landmarkType = "7">
          </BreakpointContent>
@@ -196,12 +196,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.8688509"
+            timestampString = "564378235.476023"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "-updataPhotoSuccess:"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -323,11 +323,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.869418"
+            timestampString = "564378235.476151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "YFPersonalMsgViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
+            timestampString = "564378235.47621"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "-updataUserRelevantPhoto:image:"
             landmarkType = "7">
          </BreakpointContent>
@@ -339,27 +355,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.869898"
+            timestampString = "564378235.476267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "-updataUserRelevantPhoto:image:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.870242"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -371,11 +371,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.87054"
+            timestampString = "564378235.476326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "-showPhoto:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -387,11 +387,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.870819"
+            timestampString = "564378235.476384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -643,7 +643,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/LoginAndRegister/YFLoginViewController.m"
-            timestampString = "563449143.144542"
+            timestampString = "564377187.552579"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -691,13 +691,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.87134"
+            timestampString = "564378235.47679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
-            landmarkName = "-updataImageto"
-            landmarkType = "7">
+            startingLineNumber = "397"
+            endingLineNumber = "397"
+            landmarkName = "YFPersonalMsgViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -707,7 +707,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/LoginAndRegister/YFLoginViewController.m"
-            timestampString = "563449143.144842"
+            timestampString = "564377187.552834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -803,7 +803,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/LoginAndRegister/YFLoginViewController.m"
-            timestampString = "563449143.145133"
+            timestampString = "564377187.552989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
@@ -819,7 +819,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/LoginAndRegister/YFLoginViewController.m"
-            timestampString = "563449143.145242"
+            timestampString = "564377187.553067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -835,7 +835,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.871749"
+            timestampString = "564378235.476983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -915,7 +915,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/LoginAndRegister/YFLoginViewController.m"
-            timestampString = "563449143.145528"
+            timestampString = "564377187.553242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -931,7 +931,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/LoginAndRegister/YFLoginViewController.m"
-            timestampString = "563449143.145601"
+            timestampString = "564377187.553322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -1043,7 +1043,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/View/YFPersonCollectionViewCell.m"
-            timestampString = "563185018.679392"
+            timestampString = "564378235.47732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -1203,11 +1203,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.872349"
+            timestampString = "564378235.477847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-updataUserInfo"
             landmarkType = "7">
          </BreakpointContent>
@@ -1219,11 +1219,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/PersonMsg/YFPersonalMsgViewController.m"
-            timestampString = "563791250.872615"
+            timestampString = "564378235.4779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "-updataUserInfo"
             landmarkType = "7">
          </BreakpointContent>
@@ -2021,6 +2021,70 @@
             startingLineNumber = "82"
             endingLineNumber = "82"
             landmarkName = "-backButtonClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/Tools/Other/Category/NSString+Regular.m"
+            timestampString = "564371483.715289"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
+            landmarkName = "+getCityName:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/UI/UserCenter/View/YFRegisterTableViewCell.m"
+            timestampString = "564378235.47831"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-clickRegisterBtn:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/UI/UserCenter/View/YFPersonCollectionViewCell.m"
+            timestampString = "564378235.478358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-textFieldDidChange:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/UI/UserCenter/View/YFPersonCollectionViewCell.m"
+            timestampString = "564378235.4786071"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-textFieldDidChange:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

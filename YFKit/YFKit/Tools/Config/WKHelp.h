@@ -74,7 +74,7 @@
 #define CODE_ZERO baseModel.code.integerValue == 0
 
 //用户登录账号重复
-#define CODE_REPEAT baseModel.code.integerValue == 2501
+#define CODE_REPEAT (baseModel.code.integerValue == 2501 || baseModel.code.integerValue == 2502)
 
 //token失效
 #define CODE_TOKEN baseModel.code.integerValue == 2100
@@ -121,6 +121,5 @@ return ;\
 #define IS_IPHONE6P         CGSizeEqualToSize([[UIScreen mainScreen] preferredMode].size,CGSizeMake(1242, 2208))
 #define IS_IPHONE6          CGSizeEqualToSize([[UIScreen mainScreen] preferredMode].size,CGSizeMake(750, 1334))
 #define IS_IPHONE5          CGSizeEqualToSize([[UIScreen mainScreen] preferredMode].size,CGSizeMake(640, 1136))
-#define IS_IPHONE4          CGSizeEqualToSize([[UIScreen mainScreen] preferredMode].size,CGSizeMake(640, 960))
 
 #endif /* WKHelp_h */
