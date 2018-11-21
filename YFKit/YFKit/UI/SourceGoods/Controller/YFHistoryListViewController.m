@@ -109,12 +109,13 @@
 }
 
 /**
- 如果获取的次数有改变, 那么久重新赋值 并发布一个通知 改变父类的值
+ 如果获取的次数有改变, 那么久重新赋值 并发布一个通知 改变父类的值 已取消状态不需要再次去判断了
  */
 - (void)sendChangeWithData:(WKBaseModel *)model{
     NSInteger count                         = [[[model.mDictionary safeJsonObjForKey:@"data"] safeJsonObjForKey:@"count"] integerValue];
-    if ([YFOfferData shareInstace].cancelOrderSuccessCount != count) {
+    if ([YFOfferData shareInstace].cancelOrderSuccessCount != count && self.type != 4) {
         [YFOfferData shareInstace].cancelOrderSuccessCount = count;
+        [YFNotificationCenter postNotificationName:@"CancelOrderNumsKeys" object:nil];
     }
 }
 

@@ -74,8 +74,7 @@
 #define CODE_ZERO baseModel.code.integerValue == 0
 
 //用户登录账号重复
-#define CODE_REPEAT (baseModel.code.integerValue == 2501 || baseModel.code.integerValue == 2502)
-
+#define CODE_REPEAT baseModel.code.integerValue == 2051 || baseModel.code.integerValue == 2052
 //token失效
 #define CODE_TOKEN baseModel.code.integerValue == 2100
 

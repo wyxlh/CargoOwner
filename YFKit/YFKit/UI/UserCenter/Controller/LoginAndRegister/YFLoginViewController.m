@@ -104,7 +104,7 @@
  */
 - (void)repeatAccount:(WKBaseModel *)baseModel{
     WS(weakSelf)
-    [self showAlertViewControllerTitle:wenxinTitle Message:@"手机号重复, 请用账号登录, 并验证手机号" CancelTitle:@"确定" CancelTextColor:ConfirmColor ConfirmTitle:@"取消" ConfirmTextColor: CancelColor cancelBlock:^{
+    [self showAlertViewControllerTitle:wenxinTitle Message:baseModel.message CancelTitle:@"确定" CancelTextColor:ConfirmColor ConfirmTitle:@"取消" ConfirmTextColor: CancelColor cancelBlock:^{
         [weakSelf rightTitleButtonClick:[UIButton new]];
     } confirmBlock:^{
         

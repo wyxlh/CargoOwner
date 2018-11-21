@@ -118,6 +118,7 @@
     NSInteger count                         = [[[model.mDictionary safeJsonObjForKey:@"data"] safeJsonObjForKey:@"count"] integerValue];
     if ([YFOfferData shareInstace].cancelOrderSuccessCount != count) {
         [YFOfferData shareInstace].cancelOrderSuccessCount = count;
+        [YFNotificationCenter postNotificationName:@"CancelOrderNumsKeys" object:nil];
     }
 }
 

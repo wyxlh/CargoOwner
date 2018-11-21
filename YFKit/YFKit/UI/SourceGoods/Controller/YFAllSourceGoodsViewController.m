@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIScrollView *contentView;
 @property (nonatomic, strong) TitleScrollView *titleScroll;
 @property (nonatomic, strong) NSArray *titleArr;
+@property (nonatomic, strong) UILabel *numLbl;
 @end
 
 @implementation YFAllSourceGoodsViewController
@@ -41,6 +42,12 @@
         [self.titleScroll setSelectedIndex:1];
         [self titleClick:1];
     }];
+    [[YFNotificationCenter rac_addObserverForName:@"CancelOrderNumsKeys" object:nil] subscribeNext:^(id x) {
+        @strongify(self)
+        self.numLbl.text                         = [NSString stringWithFormat:@"%ld",(long)[YFOfferData shareInstace].cancelOrderSuccessCount];
+        self.numLbl.hidden                       = [YFOfferData shareInstace].cancelOrderSuccessCount == 0;
+    }];
+    
 }
 
 #pragma mark TitleScrollView
@@ -51,14 +58,42 @@
             @strongify(self)
             [YFOfferData shareInstace].selectCtrl = index;
             if (index == 3) {
-                [YFOfferData shareInstace].cancelOrderSuccessCount = 0;
+                [self zeroAndHiddenNumLbl];
             }
             [self titleClick:index];
         }];
         _titleScroll.backgroundColor              = [UIColor colorWithPatternImage:[UIImage imageNamed:ISIPHONEX ? @"titleViewBgX" : @"titleViewBg"]];
+        [_titleScroll addSubview:self.numLbl];
         [self.view addSubview:_titleScroll];
     }
     return _titleScroll;
+}
+
+//小圆点
+- (UILabel *)numLbl {
+    if (!_numLbl) {
+        _numLbl                                  = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth-20, 10, 15, 15)];
+        _numLbl.backgroundColor                  = [UIColor redColor];
+        _numLbl.layer.masksToBounds              = YES;
+        _numLbl.layer.cornerRadius               = 7.5;
+        _numLbl.hidden                           = [YFOfferData shareInstace].cancelOrderSuccessCount == 0;
+        _numLbl.text                             = [NSString stringWithFormat:@"%ld",(long)[YFOfferData shareInstace].cancelOrderSuccessCount];
+        _numLbl.textAlignment                    = NSTextAlignmentCenter;
+        _numLbl.textColor                        = [UIColor whiteColor];
+        _numLbl.adjustsFontSizeToFitWidth        = YES;
+        _numLbl.font                             = [UIFont systemFontOfSize:10];
+    }
+    return _numLbl;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _numLbl.hidden                               = [YFOfferData shareInstace].cancelOrderSuccessCount == 0;
+}
+
+- (void)zeroAndHiddenNumLbl{
+    self.numLbl.hidden                                 = YES;
+    [YFOfferData shareInstace].cancelOrderSuccessCount = 0;
 }
 
 #pragma mark  初始化子控制器
@@ -72,7 +107,7 @@
     for (int i = 0; i < 3; i ++) {
         YFHistoryListViewController *HistoryL     = [YFHistoryListViewController new];
         if (i == 0) {
-            HistoryL.type                         = 3;//未承运
+            HistoryL.type                         = 3;//未承运 新通国际花园南区50号楼641
         }else if (i == 1){
             HistoryL.type                         = 2;//已承运
         }else{
@@ -115,6 +150,9 @@
     //添加子控制器的view
     //当前索引
     NSInteger index                                  = scrollView.contentOffset.x / scrollView.width;
+    if (index == 3) {
+        [self zeroAndHiddenNumLbl];
+    }
     if (index == 0){
         //取出子控制器
         YFReleaseListViewController *vc              = self.childViewControllers[index];

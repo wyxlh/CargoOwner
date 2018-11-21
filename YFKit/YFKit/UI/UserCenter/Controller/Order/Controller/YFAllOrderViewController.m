@@ -47,9 +47,8 @@
         @weakify(self)
         _titleScroll                             = [[TitleScrollView alloc]initWithEqualFrame:CGRectMake(0, 0, ScreenWidth, 45) TitleArray:self.titleArr selectedIndex:self.selectedIndex titleFontSize:16 scrollEnable:NO lineEqualWidth:YES selectColor:[UIColor whiteColor] defaultColor:UIColorFromRGB(0xC6D5E6) SelectBlock:^(NSInteger index) {
             @strongify(self)
-            if (index == 3) {
-                self.numLbl.hidden                = YES;
-                [YFOfferData shareInstace].cancelOrderSuccessCount = 0;
+            if (index == 2) {
+                [self zeroAndHiddenNumLbl];
             }
             [self titleClick:index];
         }];
@@ -77,6 +76,11 @@
     return _numLbl;
 }
 
+- (void)zeroAndHiddenNumLbl{
+    self.numLbl.hidden                = YES;
+    [YFOfferData shareInstace].cancelOrderSuccessCount = 0;
+}
+
 #pragma mark  初始化子控制器
 -(void)setupChildViewControllers {
     
@@ -87,7 +91,6 @@
     }
     
 }
-
 
 #pragma mark 底部的scrollview
 -(void)setupContentView {
@@ -121,6 +124,9 @@
     //添加子控制器的view
     //当前索引
     NSInteger index                              = scrollView.contentOffset.x / scrollView.width;
+    if (index == 2) {
+        [self zeroAndHiddenNumLbl];
+    }
     //取出子控制器
     YFOrderListViewController *vc                = self.childViewControllers[index];
     [vc refreshData];
