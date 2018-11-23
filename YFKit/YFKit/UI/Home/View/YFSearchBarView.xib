@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YFSearchBarView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8qr-fK-Z7F">
+                    <rect key="frame" x="16" y="9.5" width="16" height="16"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单搜索" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21t-TX-ox1">
+                    <rect key="frame" x="40" y="9" width="58" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.51330196857452393" green="0.51772212982177734" blue="0.52162641286849976" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="21t-TX-ox1" firstAttribute="leading" secondItem="8qr-fK-Z7F" secondAttribute="trailing" constant="8" id="DMH-Vh-KAr"/>
+                <constraint firstItem="21t-TX-ox1" firstAttribute="centerY" secondItem="8qr-fK-Z7F" secondAttribute="centerY" id="Dfo-4e-tgE"/>
+                <constraint firstItem="8qr-fK-Z7F" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RqE-jj-sbi"/>
+                <constraint firstItem="8qr-fK-Z7F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="rMg-ih-Ine"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="spo-7M-tg2" appends="YES" id="iDX-CF-8UV"/>
+            </connections>
+            <point key="canvasLocation" x="-231.19999999999999" y="61.619190404797607"/>
+        </view>
+        <tapGestureRecognizer id="spo-7M-tg2">
+            <connections>
+                <action selector="clickGesture:" destination="iN0-l3-epB" id="dvo-li-ae3"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="searchLogo" width="16.5" height="16.5"/>
+    </resources>
+</document>

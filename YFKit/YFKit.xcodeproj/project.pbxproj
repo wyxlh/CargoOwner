@@ -43,6 +43,16 @@
 		8813527620B55B7B00160638 /* YFShareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8813527520B55B7B00160638 /* YFShareButton.m */; };
 		8813527820B55B8300160638 /* YFShareButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8813527720B55B8300160638 /* YFShareButton.xib */; };
 		8814078C20ABCF68009419AB /* YFKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814078B20ABCF68009419AB /* YFKeyWindow.m */; };
+		8814A0E721A7DFD1007E6D4B /* YFSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814A0E621A7DFD1007E6D4B /* YFSearchBarView.m */; };
+		8814A0E921A7DFDE007E6D4B /* YFSearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8814A0E821A7DFDE007E6D4B /* YFSearchBarView.xib */; };
+		8814A0EC21A7E601007E6D4B /* YFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814A0EB21A7E601007E6D4B /* YFSearchViewController.m */; };
+		8814A0F321A7EBC5007E6D4B /* YFSearchHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8814A0F221A7EBC5007E6D4B /* YFSearchHeadView.xib */; };
+		8814A0F721A7F4AB007E6D4B /* YFSearchListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814A0F521A7F4AB007E6D4B /* YFSearchListTableViewCell.m */; };
+		8814A0F821A7F4AB007E6D4B /* YFSearchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8814A0F621A7F4AB007E6D4B /* YFSearchListTableViewCell.xib */; };
+		8814A0FB21A7FB0A007E6D4B /* YFSearchHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814A0FA21A7FB0A007E6D4B /* YFSearchHistoryModel.m */; };
+		8814A10121A80080007E6D4B /* YFSearchHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814A10021A80080007E6D4B /* YFSearchHeadView.m */; };
+		8814A10421A80230007E6D4B /* YFSearchSectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814A10321A80230007E6D4B /* YFSearchSectionHeadView.m */; };
+		8814A10621A8023B007E6D4B /* YFSearchSectionHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8814A10521A8023B007E6D4B /* YFSearchSectionHeadView.xib */; };
 		881504E720971CA6001AB07D /* YFHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 881504E520971CA6001AB07D /* YFHistoryTableViewCell.m */; };
 		881504E820971CA6001AB07D /* YFHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881504E620971CA6001AB07D /* YFHistoryTableViewCell.xib */; };
 		881504EC209721BC001AB07D /* SKSafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 881504EA209721BC001AB07D /* SKSafeObject.m */; };
@@ -427,6 +437,22 @@
 		8813527720B55B8300160638 /* YFShareButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFShareButton.xib; sourceTree = "<group>"; };
 		8814078A20ABCF68009419AB /* YFKeyWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFKeyWindow.h; sourceTree = "<group>"; };
 		8814078B20ABCF68009419AB /* YFKeyWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFKeyWindow.m; sourceTree = "<group>"; };
+		8814A0E521A7DFD1007E6D4B /* YFSearchBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchBarView.h; sourceTree = "<group>"; };
+		8814A0E621A7DFD1007E6D4B /* YFSearchBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFSearchBarView.m; sourceTree = "<group>"; };
+		8814A0E821A7DFDE007E6D4B /* YFSearchBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFSearchBarView.xib; sourceTree = "<group>"; };
+		8814A0EA21A7E601007E6D4B /* YFSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchViewController.h; sourceTree = "<group>"; };
+		8814A0EB21A7E601007E6D4B /* YFSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFSearchViewController.m; sourceTree = "<group>"; };
+		8814A0F221A7EBC5007E6D4B /* YFSearchHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFSearchHeadView.xib; sourceTree = "<group>"; };
+		8814A0F421A7F4AB007E6D4B /* YFSearchListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchListTableViewCell.h; sourceTree = "<group>"; };
+		8814A0F521A7F4AB007E6D4B /* YFSearchListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFSearchListTableViewCell.m; sourceTree = "<group>"; };
+		8814A0F621A7F4AB007E6D4B /* YFSearchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFSearchListTableViewCell.xib; sourceTree = "<group>"; };
+		8814A0F921A7FB0A007E6D4B /* YFSearchHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchHistoryModel.h; sourceTree = "<group>"; };
+		8814A0FA21A7FB0A007E6D4B /* YFSearchHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFSearchHistoryModel.m; sourceTree = "<group>"; };
+		8814A0FF21A80080007E6D4B /* YFSearchHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchHeadView.h; sourceTree = "<group>"; };
+		8814A10021A80080007E6D4B /* YFSearchHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFSearchHeadView.m; sourceTree = "<group>"; };
+		8814A10221A80230007E6D4B /* YFSearchSectionHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchSectionHeadView.h; sourceTree = "<group>"; };
+		8814A10321A80230007E6D4B /* YFSearchSectionHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFSearchSectionHeadView.m; sourceTree = "<group>"; };
+		8814A10521A8023B007E6D4B /* YFSearchSectionHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFSearchSectionHeadView.xib; sourceTree = "<group>"; };
 		881504E420971CA6001AB07D /* YFHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFHistoryTableViewCell.h; sourceTree = "<group>"; };
 		881504E520971CA6001AB07D /* YFHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFHistoryTableViewCell.m; sourceTree = "<group>"; };
 		881504E620971CA6001AB07D /* YFHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -1753,6 +1779,8 @@
 				8868D1FA20946BD4009FB681 /* YFHomeViewController.m */,
 				88831E4C20D11C2C006E317D /* YFHomeNearMapViewController.h */,
 				88831E4D20D11C2C006E317D /* YFHomeNearMapViewController.m */,
+				8814A0EA21A7E601007E6D4B /* YFSearchViewController.h */,
+				8814A0EB21A7E601007E6D4B /* YFSearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1782,6 +1810,8 @@
 				882C149620E33D6B00E2D539 /* YFInverGeoModel.m */,
 				8865B3D821539D5D007E8FF1 /* YFTwoInverGeoModel.h */,
 				8865B3D921539D5D007E8FF1 /* YFTwoInverGeoModel.m */,
+				8814A0F921A7FB0A007E6D4B /* YFSearchHistoryModel.h */,
+				8814A0FA21A7FB0A007E6D4B /* YFSearchHistoryModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1814,6 +1844,18 @@
 				889ACA4321463DAC00A65AEB /* YFHomeItemView.h */,
 				889ACA4421463DAC00A65AEB /* YFHomeItemView.m */,
 				889ACA4621463DB600A65AEB /* YFHomeItemView.xib */,
+				8814A0E521A7DFD1007E6D4B /* YFSearchBarView.h */,
+				8814A0E621A7DFD1007E6D4B /* YFSearchBarView.m */,
+				8814A0E821A7DFDE007E6D4B /* YFSearchBarView.xib */,
+				8814A0F421A7F4AB007E6D4B /* YFSearchListTableViewCell.h */,
+				8814A0F521A7F4AB007E6D4B /* YFSearchListTableViewCell.m */,
+				8814A0F621A7F4AB007E6D4B /* YFSearchListTableViewCell.xib */,
+				8814A0FF21A80080007E6D4B /* YFSearchHeadView.h */,
+				8814A10021A80080007E6D4B /* YFSearchHeadView.m */,
+				8814A0F221A7EBC5007E6D4B /* YFSearchHeadView.xib */,
+				8814A10221A80230007E6D4B /* YFSearchSectionHeadView.h */,
+				8814A10321A80230007E6D4B /* YFSearchSectionHeadView.m */,
+				8814A10521A8023B007E6D4B /* YFSearchSectionHeadView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2192,6 +2234,7 @@
 				880DB92E20A5997E008E18B6 /* YFSortViewTableViewCell.xib in Resources */,
 				88F7DBC120AD1623008AD50E /* YFOtherInputCollectionViewCell.xib in Resources */,
 				88759D7220EC9B5B00F6155C /* YFAbnormalOrderCollectionViewCell.xib in Resources */,
+				8814A0F821A7F4AB007E6D4B /* YFSearchListTableViewCell.xib in Resources */,
 				882473D821466AEB006DE56F /* YFGoodsHeadTableViewCell.xib in Resources */,
 				889ACA572146610B00A65AEB /* YFSpecialLineGoodsTableViewCell.xib in Resources */,
 				881FEC2420A14C0D00D93F2A /* LineView.xib in Resources */,
@@ -2208,6 +2251,7 @@
 				88480D3B217714030086703B /* YFModeBindViewController.xib in Resources */,
 				888020DB20B2A93E00D74379 /* SKAppUpdaterView.xib in Resources */,
 				881FEC3820A1875300D93F2A /* YFOtherRequirementView.xib in Resources */,
+				8814A0F321A7EBC5007E6D4B /* YFSearchHeadView.xib in Resources */,
 				8887276E209C3BE800C0F551 /* YFReleaseGoodsMsgTableViewCell.xib in Resources */,
 				88872773209C4CA800C0F551 /* YFReleaseFooterView.xib in Resources */,
 				884A7D11209D4639007F3908 /* YFOrderDetailLogisticsTableViewCell.xib in Resources */,
@@ -2231,6 +2275,7 @@
 				880DB90520A520EF008E18B6 /* YFResetPassWordViewController.xib in Resources */,
 				881FEC0E20A1355000D93F2A /* CityArea.json in Resources */,
 				88568B7420D3A18D0058884A /* YFFindNoCarTableViewCell.xib in Resources */,
+				8814A0E921A7DFDE007E6D4B /* YFSearchBarView.xib in Resources */,
 				8867678820F5D972003D02BD /* YFGoodsDetailSectionView.xib in Resources */,
 				884A7D16209D49E1007F3908 /* YFOrderDetailOrderNumHeadView.xib in Resources */,
 				880DB91220A53EC4008E18B6 /* YFFeedBackTableViewCell.xib in Resources */,
@@ -2267,6 +2312,7 @@
 				881504E820971CA6001AB07D /* YFHistoryTableViewCell.xib in Resources */,
 				8855DC4520A2F96B00D63BEC /* YFSettingTableViewCell.xib in Resources */,
 				88AF317520E9C9DD004A0B73 /* YFUpdataPhotoView.xib in Resources */,
+				8814A10621A8023B007E6D4B /* YFSearchSectionHeadView.xib in Resources */,
 				8828E1D320E1D19F000711DA /* YFCarTypeItemCollectionViewCell.xib in Resources */,
 				88165D9F20A820A100B67523 /* YFForgetPassWordViewController.xib in Resources */,
 				8874D8842148E0180057E962 /* YFSpecialLineAdjustFreeView.xib in Resources */,
@@ -2369,6 +2415,8 @@
 				889ACA562146610B00A65AEB /* YFSpecialLineGoodsTableViewCell.m in Sources */,
 				880DB91520A54229008E18B6 /* YFAboutHeadView.m in Sources */,
 				88AF317320E9C9D4004A0B73 /* YFUpdataPhotoView.m in Sources */,
+				8814A10121A80080007E6D4B /* YFSearchHeadView.m in Sources */,
+				8814A0FB21A7FB0A007E6D4B /* YFSearchHistoryModel.m in Sources */,
 				8867678620F5D960003D02BD /* YFGoodsDetailSectionView.m in Sources */,
 				88441A3D20AC41980089F330 /* YFNullView.m in Sources */,
 				8868D18C209461F9009FB681 /* ViewController.m in Sources */,
@@ -2442,6 +2490,7 @@
 				887EF13520D216F400498DDC /* YFLocationModel.m in Sources */,
 				88DA6DD820C8CC7A0095C634 /* YFViolationTableViewCell.m in Sources */,
 				88568B5720D35F3B0058884A /* CommonUtility.m in Sources */,
+				8814A0F721A7F4AB007E6D4B /* YFSearchListTableViewCell.m in Sources */,
 				88165DAC20A9386100B67523 /* UserInfoData.m in Sources */,
 				88568B8320D3C45B0058884A /* YFUserCenterCollectionReusableView.m in Sources */,
 				8868D1C6209462BA009FB681 /* YFUserCenterViewController.m in Sources */,
@@ -2460,6 +2509,7 @@
 				889ACA422146129A00A65AEB /* YFOtherLogin.m in Sources */,
 				88BA2F1A209AFCA000C8FC8D /* YFOrderListViewController.m in Sources */,
 				88831E1420D0C48B006E317D /* YFAddressListViewController.m in Sources */,
+				8814A10421A80230007E6D4B /* YFSearchSectionHeadView.m in Sources */,
 				884A7D01209D45AE007F3908 /* YFOrderAddressTableViewCell.m in Sources */,
 				8855DC3C20A2D9B600D63BEC /* YFUserCenterTableViewCell.m in Sources */,
 				883C1C3320A03E4200D0D9FA /* YFReleseListModel.m in Sources */,
@@ -2527,6 +2577,7 @@
 				881FEC0A20A1328900D93F2A /* NSArray+AddressMsg.m in Sources */,
 				883C1C3C20A070C400D0D9FA /* YFDriverListModel.m in Sources */,
 				88DA6DED20C8FD920095C634 /* YFUserCenterViewModel.m in Sources */,
+				8814A0E721A7DFD1007E6D4B /* YFSearchBarView.m in Sources */,
 				88746B7220B6BA8B005D6503 /* YFRegisterTableViewCell.m in Sources */,
 				882A1B42215243F7005CCCB1 /* YFFindCarCollectionReusableView.m in Sources */,
 				88C3BE7D20D89FB10055E5F8 /* YFFindCarSearchBarView.m in Sources */,
@@ -2555,6 +2606,7 @@
 				88165DA920A9380700B67523 /* UserData.m in Sources */,
 				881FEC3620A1874900D93F2A /* YFOtherRequirementView.m in Sources */,
 				88FD5BD921901B80003B188F /* UITableView+Extension.m in Sources */,
+				8814A0EC21A7E601007E6D4B /* YFSearchViewController.m in Sources */,
 				88831E2720D0E2FE006E317D /* YFEditAddressViewController.m in Sources */,
 				889ACA4A2146500400A65AEB /* YFSpeciallinePlanOrderViewController.m in Sources */,
 				88BA2F14209AFBA900C8FC8D /* YFPlaceOrderViewController.m in Sources */,
