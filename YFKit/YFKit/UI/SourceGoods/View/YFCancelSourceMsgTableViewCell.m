@@ -10,12 +10,24 @@
 #import "YFReleseDetailModel.h"
 #import "YFInverGeoModel.h"
 #import "YFOrderDetailModel.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import "GeocodeAnnotation.h"
+
+@interface YFCancelSourceMsgTableViewCell()<AMapSearchDelegate>{
+    
+}
+@property (nonatomic, assign) CGFloat Latitude;//以前的老单子, 需要把位置转为经纬度
+@property (nonatomic, assign) CGFloat Longitude;
+@property (nonatomic, strong) AMapSearchAPI *search;
+@end
 
 @implementation YFCancelSourceMsgTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = 0;
+    self.search = [[AMapSearchAPI alloc] init];
+    self.search.delegate = self;
     // Initialization code
 }
 
@@ -51,7 +63,13 @@
     }else{
         self.endDetail.text         = [NSString getNullOrNoNull:sourceModel.endSite];
     }
-    [self onlyGetLatitudeAndLongitudeWithSource];
+    
+    //距离多少米
+    if (sourceModel.endSiteLatitude == 0 || sourceModel.startSiteLatitude == 0) {
+        [self getLatitudeAndLongitude];
+    }else{
+        [self onlyGetLatitudeAndLongitudeWithSource];
+    }
 }
 
 /**
@@ -97,6 +115,66 @@
     [YFInverGeoModel sharedYFInverGeoModel].twoPointDistanceBlock = ^(CGFloat distance){
         weakSelf.distance.text = [NSString stringWithFormat:@"距离%.2f公里",distance];
     };
+    
+}
+
+- (void)getLatitudeAndLongitude{
+    if (_sourceModel) {
+        //出发地
+        YFInverGeoModel  *geoStart                  = [[YFInverGeoModel alloc]init];
+        [geoStart getLatitudeAndlongitudeWithAddress:self.sourceModel.startSite];
+        WS(weakSelf)
+        geoStart.latitudeAndlongitudeBlock          = ^(CGFloat Latitude, CGFloat Longitude){
+            weakSelf.Latitude                       = Latitude;
+            weakSelf.Longitude                      = Longitude;
+            //目的地
+            [weakSelf getLatitudeAndlongitudeWithAddress:weakSelf.sourceModel.endSite];
+        };
+    }else{
+        //出发地
+        YFInverGeoModel  *geoStart                  = [[YFInverGeoModel alloc]init];
+        [geoStart getLatitudeAndlongitudeWithAddress:self.orderModel.startSite];
+        WS(weakSelf)
+        geoStart.latitudeAndlongitudeBlock          = ^(CGFloat Latitude, CGFloat Longitude){
+            weakSelf.Latitude                       = Latitude;
+            weakSelf.Longitude                      = Longitude;
+            //目的地
+            [weakSelf getLatitudeAndlongitudeWithAddress:weakSelf.orderModel.endSite];
+        };
+    }
+    
+    
+}
+/**
+ 返回经纬度
+ 
+ @param address address description
+ */
+- (void)getLatitudeAndlongitudeWithAddress:(NSString *)address{
+    AMapGeocodeSearchRequest *geo = [[AMapGeocodeSearchRequest alloc] init];
+    geo.address = address;
+    
+    [self.search AMapGeocodeSearch:geo];
+}
+- (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
+{
+    if (response.geocodes.count == 0)
+    {
+        return;
+    }
+    
+    NSMutableArray *annotations = [NSMutableArray array];
+    WS(weakSelf)
+    [response.geocodes enumerateObjectsUsingBlock:^(AMapGeocode *obj, NSUInteger idx, BOOL *stop) {
+        GeocodeAnnotation *geocodeAnnotation = [[GeocodeAnnotation alloc] initWithGeocode:obj];
+        DLog(@"%f",geocodeAnnotation.geocode.location.latitude);
+        [[YFInverGeoModel sharedYFInverGeoModel] getTwoPointsDistanceWithStartLatitude:self.Latitude startLongitude:self.Longitude endLatitude:geocodeAnnotation.geocode.location.latitude endLongitude:geocodeAnnotation.geocode.location.longitude strategy:2];
+        
+        [YFInverGeoModel sharedYFInverGeoModel].twoPointDistanceBlock = ^(CGFloat distance){
+            weakSelf.distance.text = [NSString stringWithFormat:@"距离%.2f公里",distance];
+        };
+        [annotations addObject:geocodeAnnotation];
+    }];
     
 }
 

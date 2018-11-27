@@ -455,11 +455,19 @@
 /**
  获取取消货源的原因
  */
-+ (NSArray *)cancelSourceReasonData{
++ (NSArray *)cancelSourceReasonData {
     return @[@{@"name":@"行程有变,暂时不需要用车",@"isSelect":@0},
              @{@"name":@"司机迟到",@"isSelect":@0},
              @{@"name":@"司机联系不上",@"isSelect":@0},
              @{@"name":@"其他",@"isSelect":@0}];
+}
+
++ (NSArray *)homeBannerDataArr {
+    if (ISIPHONEX) {
+        return @[@"bannerX",@"banner1X",@"banner2X"];
+    }else{
+        return @[@"banner",@"banner1",@"banner2"];
+    }
 }
 
 @end

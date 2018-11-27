@@ -11,6 +11,7 @@
 #import "WKTabbarController.h"
 #import "WKNavigationController.h"
 #import "YFLoginViewController.h"
+
 static YFKeyWindow *_instance = nil;
 
 @implementation YFKeyWindow

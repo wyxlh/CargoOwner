@@ -69,7 +69,7 @@
         _collectionView.contentInset                 = UIEdgeInsetsMake(height, 0.0f, 10.0f, 0.0f);
         _collectionView.alwaysBounceVertical         = YES;
         
-        NSArray *_imageUrls = @[@"banner",@"banner1",@"banner2"];
+        NSArray *_imageUrls = [NSArray homeBannerDataArr];
         
         SDCycleScrollView *cycleScrollView          = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -height, ScreenWidth,height) delegate:nil placeholderImage:[UIImage imageNamed:@"banner"]];
         cycleScrollView.pageControlAliment          = SDCycleScrollViewPageContolAlimentCenter;
@@ -77,6 +77,7 @@
             
         };
         cycleScrollView.currentPageDotColor         = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
+        cycleScrollView.pageDotColor                = [UIColor colorWithWhite:1 alpha:0.5];
         self._bannerView                            = cycleScrollView;
         cycleScrollView.localizationImageNamesGroup = _imageUrls;
         cycleScrollView.hidden                      = _imageUrls.count == 0 ? YES : NO ;
@@ -114,7 +115,7 @@
 - (YFSearchBarView *)searchBar {
     if (!_searchBar) {
         _searchBar                                  = [[[NSBundle mainBundle] loadNibNamed:@"YFSearchBarView" owner:nil options:nil] firstObject];
-        _searchBar.frame                            = CGRectMake(16, ISIPHONEX ? 24 + XHEIGHT : 24, ScreenWidth - 32, 35);
+        _searchBar.frame                            = CGRectMake(16, ISIPHONEX ? (24 + XHEIGHT) : 24, ScreenWidth - 32, 35);
         @weakify(self)
         _searchBar.searchBarBlock                   = ^{
             @strongify(self)

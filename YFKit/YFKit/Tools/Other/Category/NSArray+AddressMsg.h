@@ -197,4 +197,9 @@
  */
 + (NSArray *)cancelSourceReasonData;
 
+/**
+ 首页 banner 图片数据
+ */
++ (NSArray *)homeBannerDataArr;
+
 @end

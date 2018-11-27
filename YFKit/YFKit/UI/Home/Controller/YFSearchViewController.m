@@ -11,6 +11,7 @@
 #import "YFSearchListTableViewCell.h"
 #import "YFSearchHistoryModel.h"
 #import "YFSearchSectionHeadView.h"
+#import "YFSearchDetailViewController.h"
 
 @interface YFSearchViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong, nullable) UITableView *tableView;
@@ -23,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView reloadData];
-    
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
@@ -47,6 +47,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return CGFLOAT_MIN;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YFSearchDetailViewController *detail        = [YFSearchDetailViewController new];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark TableView
@@ -73,6 +78,7 @@
         @weakify(self)
         [[_searchHeadView.cancelBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             @strongify(self)
+            [self.view endEditing:YES];
             [self.navigationController popViewControllerAnimated:NO];
         }];
         _searchHeadView.searchClickBlock = ^(NSString * _Nonnull searchText) {

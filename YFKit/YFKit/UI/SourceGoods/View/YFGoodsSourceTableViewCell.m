@@ -88,13 +88,11 @@
     }
     
     //距离多少米
-    if (model.startSiteLatitude == 0) {
+    if (model.endSiteLatitude == 0 || model.startSiteLatitude == 0) {
         [self getLatitudeAndLongitude];
     }else{
         [self onlyGetLatitudeAndLongitude];
     }
-
-     
 }
 
 /**
