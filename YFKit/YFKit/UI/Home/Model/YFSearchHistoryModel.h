@@ -9,25 +9,24 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
 @interface YFSearchHistoryModel : NSObject
 /**
  *  保存数据
  *
  */
--(void)saveData:(NSString *)searchKey;
+- (void)saveData:(NSMutableArray *)searchArray;
 
 /**
  *  读取数据
  *
  */
--(NSMutableArray *)readData;
+- (NSMutableArray *)readData;
 
 /**
  *
  *   删除数据
  */
--(void)deleteData;
+- (void)deleteData;
 @end
 
 NS_ASSUME_NONNULL_END

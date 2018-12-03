@@ -7,6 +7,7 @@
 //
 
 #import "YFSearchListTableViewCell.h"
+#import "YFSearchListModel.h"
 
 @implementation YFSearchListTableViewCell
 
@@ -26,6 +27,11 @@ static NSString *const cellID = @"YFSearchListTableViewCell";
     [super awakeFromNib];
     self.selectionStyle = 0;
     // Initialization code
+}
+
+- (void)setModel:(YFSearchListModel *)model {
+    self.companyName.text = [NSString stringWithFormat:@"%@",model.companyname];
+    self.orderNum.text = model.orderNum;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

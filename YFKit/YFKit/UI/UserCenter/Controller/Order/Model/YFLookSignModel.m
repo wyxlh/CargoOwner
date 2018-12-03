@@ -13,5 +13,9 @@
 
 @end
 
+@implementation YFSearchLookSignModel
+
+@end
+
 
 

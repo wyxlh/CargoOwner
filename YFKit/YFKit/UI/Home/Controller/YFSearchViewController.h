@@ -9,8 +9,13 @@
 #import "YFBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+typedef NS_ENUM(NSInteger, YFSearchOrderShowType) {
+    YFSearchOrderShowHistoryType,//历史搜索
+    YFSearchOrderShowResultType  //搜索出来的效果
+};
 @interface YFSearchViewController : YFBaseViewController
+
+@property (nonatomic, assign) YFSearchOrderShowType searchType;
 
 @end
 

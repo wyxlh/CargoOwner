@@ -10,16 +10,43 @@
 #import "YFSearchGoodsItemTableViewCell.h"
 #import "YFSearceDetailTimeTableViewCell.h"
 #import "YFSearchDetailMapTableViewCell.h"
+#import "YFLogisticsTrackViewController.h"
+#import "YFSearchDetailModel.h"
+#import "YFLookSignInViewController.h"
 
 @interface YFSearchDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong ,nullable) UITableView *tableView;
+@property (nonatomic, strong, nullable) YFSearchDetailModel *mainModel;
 @end
 
 @implementation YFSearchDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"订单号";
+    [self netWork];
+}
+
+#pragma mark 获取订单详情和司机位置
+- (void)netWork {
+    NSMutableDictionary *parms      = [NSMutableDictionary dictionary];
+    [parms safeSetObject:self.billId forKey:@"billId"];
+    [parms safeSetObject:self.syscode forKey:@"sysCode"];
+    [parms safeSetObject:self.type forKey:@"type"];
+    @weakify(self)
+    [WKRequest getWithURLString:@"bill/v114/search/bill/info.do?" parameters:parms success:^(WKBaseModel *baseModel) {
+        @strongify(self)
+        if (CODE_ZERO) {
+            [self netWorkSuccessWithModel:baseModel];
+        }else{
+            [YFToast showMessage:baseModel.message inView:self.view];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)netWorkSuccessWithModel:(WKBaseModel *)baseModel {
+    self.mainModel    = [YFSearchDetailModel mj_objectWithKeyValues:[baseModel.mDictionary safeJsonObjForKey:@"data"]];
     [self.tableView reloadData];
 }
 
@@ -29,24 +56,74 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return section == 2 ? 5 : 1;
+    return section == 2 ? self.mainModel.details.count : 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         //货物信息
         YFSearchGoodsItemTableViewCell *cell   = [YFSearchGoodsItemTableViewCell cellWithTableView:tableView];
+        cell.model                             = self.mainModel;
         return cell;
     }else if (indexPath.section == 1) {
         //地图
         YFSearchDetailMapTableViewCell *cell   = [YFSearchDetailMapTableViewCell cellWithTableView:tableView];
+        cell.model                             = self.mainModel;
         return cell;
     }else {
         //物流轨迹
         YFSearceDetailTimeTableViewCell *cell  = [YFSearceDetailTimeTableViewCell cellWithTableView:tableView];
         cell.index                             = indexPath.row;
+        cell.model                             = self.mainModel.details[indexPath.row];
+        cell.bottomLine.hidden                 = indexPath.row == self.mainModel.details.count - 1;
+        @weakify(self)
+        [[[cell.lookBtn rac_signalForControlEvents:UIControlEventTouchUpInside]     takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+            @strongify(self)
+            KUSERNOTLOGIN;
+            YFLookSignInViewController *look   = [YFLookSignInViewController new];
+            look.taskId                        = self.billId;
+            look.isSearchLookType              = YES;
+            look.orderNum(self.billId).typeId(self.mainModel.billWRType).sysCodeId(self.syscode);
+            [self.navigationController pushViewController:look animated:YES];
+        }];
         return cell;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        YFLogisticsTrackViewController *track = [YFLogisticsTrackViewController new];
+        track.mainModel                       = self.mainModel;
+        [self.navigationController pushViewController:track animated:YES];
+    }
+}
+
+#pragma mark 上个页面传值
+- (YFSearchDetailViewController * _Nonnull (^)(NSString * _Nonnull))billIdBlock {
+    @weakify(self)
+    return ^(NSString *billId){
+        @strongify(self)
+        self.title = self.billId = billId;
+        return self;
+    };
+}
+
+- (YFSearchDetailViewController * _Nonnull (^)(NSString * _Nonnull))syscodeBlock {
+    @weakify(self)
+    return ^(NSString *syscode){
+        @strongify(self)
+        self.syscode = syscode;
+        return self;
+    };
+}
+
+- (YFSearchDetailViewController * _Nonnull (^)(NSString * _Nonnull))typeBlock {
+    @weakify(self)
+    return ^(NSString *type){
+        @strongify(self)
+        self.type = type;
+        return self;
+    };
 }
 
 #pragma mark tableView

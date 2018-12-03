@@ -20,5 +20,14 @@ typedef NS_ENUM(NSInteger, KSImageManagerType) {
 @property (nonatomic, assign) KSPhotoBrowserImageLoadingStyle loadingStyle;
 @property (nonatomic, assign) BOOL bounces;
 @property (nonatomic, assign) KSImageManagerType imageManagerType;
+/**搜索订单*/
+@property (nonatomic, assign) BOOL isSearchLookType;
 @property (nonatomic, copy, nullable) NSString *taskId;
+@property (nonatomic, copy, nullable) NSString *type;
+@property (nonatomic, copy, nullable) NSString *sysCode;
+/**搜索订单号*/
+@property (nonatomic, copy) YFLookSignInViewController *(^orderNum)(NSString *orderNum);
+/**搜索订单类型*/
+@property (nonatomic, copy) YFLookSignInViewController *(^typeId)(NSString *typeId);
+@property (nonatomic, copy) YFLookSignInViewController *(^sysCodeId)(NSString *sysCodeId);
 @end

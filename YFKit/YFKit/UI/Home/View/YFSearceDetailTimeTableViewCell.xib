@@ -35,10 +35,10 @@
                             <constraint firstAttribute="width" secondItem="Dqu-TJ-lCg" secondAttribute="height" multiplier="1:1" id="u1o-gH-Coh"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="派送" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-Oa-Zbg">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="派送" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-Oa-Zbg">
                         <rect key="frame" x="123" y="19" width="29" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.56470588239999997" green="0.5696309209" blue="0.57350522280000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="textColor" red="0.56470588235294117" green="0.56862745098039214" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="派送" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGK-uO-OBC">
@@ -67,16 +67,29 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIf-pE-kw8">
+                        <rect key="frame" x="162" y="13" width="72" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="AWw-V9-Uu4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="查看签收单">
+                            <color key="titleColor" red="0.85403943061828613" green="0.35782510042190552" blue="0.13774296641349792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="7xh-zT-nU5" firstAttribute="centerX" secondItem="sRc-yh-LxE" secondAttribute="centerX" id="2am-CS-Q5M"/>
                     <constraint firstItem="7xh-zT-nU5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="431-Sw-k5K"/>
                     <constraint firstItem="Dqu-TJ-lCg" firstAttribute="leading" secondItem="VHL-3l-zKI" secondAttribute="trailing" constant="10" id="9Ef-ob-Gm5"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="BIf-pE-kw8" secondAttribute="trailing" id="Kvj-pi-5fX"/>
+                    <constraint firstItem="BIf-pE-kw8" firstAttribute="centerY" secondItem="ybb-Oa-Zbg" secondAttribute="centerY" id="Ndg-vi-2IV"/>
                     <constraint firstItem="sRc-yh-LxE" firstAttribute="centerX" secondItem="Dqu-TJ-lCg" secondAttribute="centerX" id="OBl-bx-Ka5"/>
                     <constraint firstAttribute="bottom" secondItem="sRc-yh-LxE" secondAttribute="bottom" id="QPc-H0-u9p"/>
                     <constraint firstItem="ybb-Oa-Zbg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Qg4-wq-Qaq"/>
                     <constraint firstItem="VHL-3l-zKI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ws2-Bx-xch"/>
                     <constraint firstItem="YGK-uO-OBC" firstAttribute="top" secondItem="ybb-Oa-Zbg" secondAttribute="bottom" constant="5" id="aYG-7K-dhH"/>
+                    <constraint firstItem="BIf-pE-kw8" firstAttribute="leading" secondItem="ybb-Oa-Zbg" secondAttribute="trailing" constant="10" id="eO9-Nh-sNc"/>
                     <constraint firstItem="YGK-uO-OBC" firstAttribute="leading" secondItem="ybb-Oa-Zbg" secondAttribute="leading" id="gxl-ue-zbf"/>
                     <constraint firstItem="ybb-Oa-Zbg" firstAttribute="leading" secondItem="Dqu-TJ-lCg" secondAttribute="trailing" constant="10" id="hc2-ep-dhp"/>
                     <constraint firstItem="YGK-uO-OBC" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="kVr-cl-Ywl"/>
@@ -90,10 +103,15 @@
             <connections>
                 <outlet property="bottomCons" destination="zsd-aH-cz7" id="tyK-L4-QcL"/>
                 <outlet property="bottomLine" destination="sRc-yh-LxE" id="vaO-4t-pSQ"/>
+                <outlet property="btnWidth" destination="AWw-V9-Uu4" id="X2e-ZZ-qKZ"/>
+                <outlet property="detailDes" destination="YGK-uO-OBC" id="lD3-Um-xSh"/>
                 <outlet property="imgView" destination="Dqu-TJ-lCg" id="TCY-2t-Vnv"/>
+                <outlet property="lookBtn" destination="BIf-pE-kw8" id="dm0-ls-dDK"/>
+                <outlet property="time" destination="VHL-3l-zKI" id="05O-51-Sd6"/>
+                <outlet property="title" destination="ybb-Oa-Zbg" id="2ug-e8-lFw"/>
                 <outlet property="topLine" destination="7xh-zT-nU5" id="19a-x6-9Xa"/>
             </connections>
-            <point key="canvasLocation" x="-406" y="-103"/>
+            <point key="canvasLocation" x="-1008" y="-121.4392803598201"/>
         </tableViewCell>
     </objects>
     <resources>

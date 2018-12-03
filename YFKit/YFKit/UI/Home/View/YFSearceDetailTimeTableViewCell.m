@@ -7,6 +7,7 @@
 //
 
 #import "YFSearceDetailTimeTableViewCell.h"
+#import "YFSearchDetailModel.h"
 
 @implementation YFSearceDetailTimeTableViewCell
 
@@ -22,21 +23,41 @@ static NSString *const cellID = @"YFSearceDetailTimeTableViewCell";
 
 -(void)setIndex:(NSInteger)index {
     self.topLine.hidden         = index == 0;
-//    self.bottomLine.hidden      = index == 4;
-    self.bottomCons.constant    = index == 0 ? -2 : -6;
-    self.imgView.image          = index == 0 ? [UIImage imageNamed:@"bluePoint"] : [UIImage imageNamed:@"AshPoint"];
+    if (index == 0) {
+        //第一行
+        self.detailDes.textColor = self.time.textColor = self.title.textColor = UIColorFromRGB(0x0073E7);
+        self.btnWidth.constant   = 72.0f;
+        self.bottomCons.constant = -2;
+        self.imgView.image       = [UIImage imageNamed:@"bluePoint"];
+    }else{
+        self.detailDes.textColor = self.time.textColor = self.title.textColor = UIColorFromRGB(0x909192);
+        self.btnWidth.constant   = CGFLOAT_MIN;
+        self.bottomCons.constant = -6;
+        self.imgView.image       = [UIImage imageNamed:@"AshPoint"];
+    }
+}
+
+- (void)setModel:(detailsModel *)model {
+    if ([model.status containsString:@"签收"]) {
+        self.lookBtn.hidden      = NO;
+        self.btnWidth.constant   = 72.0f;
+    }else {
+        self.lookBtn.hidden      = YES;
+        self.btnWidth.constant   = CGFLOAT_MIN;
+    }
+    self.title.text              = model.status;
+    self.detailDes.text          = model.describe;
+    self.time.text               = model.dataTime;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = 0;
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

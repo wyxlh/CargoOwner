@@ -126,7 +126,8 @@
     if ([sender.titleLabel.text isEqualToString:@"查看签收单"]) {
         //查看签收单
         YFLookSignInViewController *look             = [[YFLookSignInViewController alloc]initWithNibName:@"YFLookSignInViewController" bundle:nil];
-        look.taskId                                  = self.Omodel.taskId;
+        look.orderNum(self.Omodel.taskId);
+        look.isSearchLookType                        = NO;
         look.hidesBottomBarWhenPushed                = YES;
         [self.superVC.navigationController pushViewController:look animated:YES];
     }else if ([sender.titleLabel.text isEqualToString:@"查看报价"]){

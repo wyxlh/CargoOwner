@@ -7,6 +7,7 @@
 //
 
 #import "YFSearchHistoryModel.h"
+#import "YFSearchListModel.h"
 
 @implementation YFSearchHistoryModel
 /**
@@ -15,10 +16,10 @@
  @return return value description
  */
 #pragma  mark -
--(void)saveData:(NSString *)searchKey{
+- (void)saveData:(NSMutableArray *)searchArray {
     
     NSMutableArray *array = [NSMutableArray arrayWithArray:[self readData]];
-    [array addObject:searchKey];
+    [array addObjectsFromArray:searchArray];
     //过滤重复数据
     NSMutableArray *categoryArray = [[NSMutableArray alloc] init];
     for (unsigned i = 0; i < [array count]; i++){
@@ -29,7 +30,10 @@
     if (categoryArray.count > 6) {
         [categoryArray removeObjectAtIndex:0];
     }
-    [YFUserDefaults setObject:categoryArray forKey:@"SearchHistoryArray"];
+    //序列化
+    NSData  *jsonData = [NSJSONSerialization dataWithJSONObject:categoryArray options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [YFUserDefaults setObject:jsonStr forKey:@"SearchHistoryArray"];
     [YFUserDefaults synchronize];
 }
 
@@ -40,8 +44,15 @@
  @return return value description
  */
 #pragma  mark -
--(NSMutableArray *)readData{
-    NSMutableArray *array =  [YFUserDefaults objectForKey:@"SearchHistoryArray"];
+- (NSMutableArray *)readData {
+    NSString *jsonStr = [YFUserDefaults objectForKey:@"SearchHistoryArray"];
+    NSData *jsonData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    if (jsonData == nil ) {
+        return [NSMutableArray new];
+    }
+    //反序列化
+    NSMutableArray *array = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    
     if (!array) {
         array = [[NSMutableArray alloc] init];
     }
@@ -51,7 +62,7 @@
 /**
  删除数据。使用空数据写入替换
  */
--(void)deleteData{
+- (void)deleteData {
     NSMutableArray *categoryArray = [[NSMutableArray alloc] init];
     [YFUserDefaults setObject:categoryArray forKey:@"SearchHistoryArray"];
     [YFUserDefaults synchronize];

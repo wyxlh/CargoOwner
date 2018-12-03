@@ -42,6 +42,7 @@
 		8813527320B5578600160638 /* YFShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8813527220B5578600160638 /* YFShareView.m */; };
 		8813527620B55B7B00160638 /* YFShareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8813527520B55B7B00160638 /* YFShareButton.m */; };
 		8813527820B55B8300160638 /* YFShareButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8813527720B55B8300160638 /* YFShareButton.xib */; };
+		88136E4921B0DAF600D3ACB1 /* YFSearchDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88136E4821B0DAF600D3ACB1 /* YFSearchDetailModel.m */; };
 		8814078C20ABCF68009419AB /* YFKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814078B20ABCF68009419AB /* YFKeyWindow.m */; };
 		8814A0E721A7DFD1007E6D4B /* YFSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8814A0E621A7DFD1007E6D4B /* YFSearchBarView.m */; };
 		8814A0E921A7DFDE007E6D4B /* YFSearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8814A0E821A7DFDE007E6D4B /* YFSearchBarView.xib */; };
@@ -120,6 +121,7 @@
 		882C411620A6C3E700142BA9 /* YFLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882C411420A6C3E700142BA9 /* YFLoginViewController.xib */; };
 		8832B3D721758045004E9114 /* UIControl+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8832B3D321758044004E9114 /* UIControl+Tracking.m */; };
 		8832B3D821758045004E9114 /* YFUmengTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8832B3D521758044004E9114 /* YFUmengTracking.m */; };
+		88398BD321AFD81B00345FDA /* YFSearchListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88398BD221AFD81B00345FDA /* YFSearchListModel.m */; };
 		883C1C3320A03E4200D0D9FA /* YFReleseListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 883C1C3220A03E4200D0D9FA /* YFReleseListModel.m */; };
 		883C1C3620A054DB00D0D9FA /* YFReleseDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 883C1C3520A054DB00D0D9FA /* YFReleseDetailModel.m */; };
 		883C1C3920A06ABA00D0D9FA /* YFBiddingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 883C1C3820A06ABA00D0D9FA /* YFBiddingListModel.m */; };
@@ -347,6 +349,9 @@
 		88DA6DE620C8E2030095C634 /* YFQueryResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DA6DE420C8E2030095C634 /* YFQueryResultTableViewCell.xib */; };
 		88DA6DEA20C8FD800095C634 /* YFUserCenterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DA6DE920C8FD800095C634 /* YFUserCenterService.m */; };
 		88DA6DED20C8FD920095C634 /* YFUserCenterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DA6DEC20C8FD920095C634 /* YFUserCenterViewModel.m */; };
+		88DAAC3321AE7A8800A4C8CD /* YFLogisticsTrackMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAC3221AE7A8800A4C8CD /* YFLogisticsTrackMapView.m */; };
+		88DAAC3521AE7A9500A4C8CD /* YFLogisticsTrackMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DAAC3421AE7A9500A4C8CD /* YFLogisticsTrackMapView.xib */; };
+		88DAAC3821AE7E4E00A4C8CD /* YFLogisticsTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAC3721AE7E4E00A4C8CD /* YFLogisticsTrackViewController.m */; };
 		88EEA33A20AE6A7700BBA040 /* YFAdjFreeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EEA33920AE6A7700BBA040 /* YFAdjFreeAlertView.m */; };
 		88EEA33C20AE6A8000BBA040 /* YFAdjFreeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88EEA33B20AE6A8000BBA040 /* YFAdjFreeAlertView.xib */; };
 		88F7DBC020AD1623008AD50E /* YFOtherInputCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F7DBBE20AD1622008AD50E /* YFOtherInputCollectionViewCell.m */; };
@@ -442,6 +447,8 @@
 		8813527420B55B7B00160638 /* YFShareButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFShareButton.h; sourceTree = "<group>"; };
 		8813527520B55B7B00160638 /* YFShareButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFShareButton.m; sourceTree = "<group>"; };
 		8813527720B55B8300160638 /* YFShareButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFShareButton.xib; sourceTree = "<group>"; };
+		88136E4721B0DAF600D3ACB1 /* YFSearchDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchDetailModel.h; sourceTree = "<group>"; };
+		88136E4821B0DAF600D3ACB1 /* YFSearchDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFSearchDetailModel.m; sourceTree = "<group>"; };
 		8814078A20ABCF68009419AB /* YFKeyWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFKeyWindow.h; sourceTree = "<group>"; };
 		8814078B20ABCF68009419AB /* YFKeyWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFKeyWindow.m; sourceTree = "<group>"; };
 		8814A0E521A7DFD1007E6D4B /* YFSearchBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchBarView.h; sourceTree = "<group>"; };
@@ -570,6 +577,8 @@
 		8832B3D421758044004E9114 /* UIControl+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Tracking.h"; sourceTree = "<group>"; };
 		8832B3D521758044004E9114 /* YFUmengTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFUmengTracking.m; sourceTree = "<group>"; };
 		8832B3D621758045004E9114 /* YFUmengTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFUmengTracking.h; sourceTree = "<group>"; };
+		88398BD121AFD81B00345FDA /* YFSearchListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSearchListModel.h; sourceTree = "<group>"; };
+		88398BD221AFD81B00345FDA /* YFSearchListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFSearchListModel.m; sourceTree = "<group>"; };
 		883C1C3120A03E4200D0D9FA /* YFReleseListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFReleseListModel.h; sourceTree = "<group>"; };
 		883C1C3220A03E4200D0D9FA /* YFReleseListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFReleseListModel.m; sourceTree = "<group>"; };
 		883C1C3420A054DB00D0D9FA /* YFReleseDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFReleseDetailModel.h; sourceTree = "<group>"; };
@@ -961,6 +970,11 @@
 		88DA6DE920C8FD800095C634 /* YFUserCenterService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFUserCenterService.m; sourceTree = "<group>"; };
 		88DA6DEB20C8FD920095C634 /* YFUserCenterViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFUserCenterViewModel.h; sourceTree = "<group>"; };
 		88DA6DEC20C8FD920095C634 /* YFUserCenterViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFUserCenterViewModel.m; sourceTree = "<group>"; };
+		88DAAC3121AE7A8800A4C8CD /* YFLogisticsTrackMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFLogisticsTrackMapView.h; sourceTree = "<group>"; };
+		88DAAC3221AE7A8800A4C8CD /* YFLogisticsTrackMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFLogisticsTrackMapView.m; sourceTree = "<group>"; };
+		88DAAC3421AE7A9500A4C8CD /* YFLogisticsTrackMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFLogisticsTrackMapView.xib; sourceTree = "<group>"; };
+		88DAAC3621AE7E4E00A4C8CD /* YFLogisticsTrackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFLogisticsTrackViewController.h; sourceTree = "<group>"; };
+		88DAAC3721AE7E4E00A4C8CD /* YFLogisticsTrackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFLogisticsTrackViewController.m; sourceTree = "<group>"; };
 		88EEA33820AE6A7700BBA040 /* YFAdjFreeAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFAdjFreeAlertView.h; sourceTree = "<group>"; };
 		88EEA33920AE6A7700BBA040 /* YFAdjFreeAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFAdjFreeAlertView.m; sourceTree = "<group>"; };
 		88EEA33B20AE6A8000BBA040 /* YFAdjFreeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFAdjFreeAlertView.xib; sourceTree = "<group>"; };
@@ -1801,6 +1815,8 @@
 				8814A0EB21A7E601007E6D4B /* YFSearchViewController.m */,
 				888703BE21AB7D2100EB3300 /* YFSearchDetailViewController.h */,
 				888703BF21AB7D2100EB3300 /* YFSearchDetailViewController.m */,
+				88DAAC3621AE7E4E00A4C8CD /* YFLogisticsTrackViewController.h */,
+				88DAAC3721AE7E4E00A4C8CD /* YFLogisticsTrackViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1832,6 +1848,10 @@
 				8865B3D921539D5D007E8FF1 /* YFTwoInverGeoModel.m */,
 				8814A0F921A7FB0A007E6D4B /* YFSearchHistoryModel.h */,
 				8814A0FA21A7FB0A007E6D4B /* YFSearchHistoryModel.m */,
+				88398BD121AFD81B00345FDA /* YFSearchListModel.h */,
+				88398BD221AFD81B00345FDA /* YFSearchListModel.m */,
+				88136E4721B0DAF600D3ACB1 /* YFSearchDetailModel.h */,
+				88136E4821B0DAF600D3ACB1 /* YFSearchDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1885,6 +1905,9 @@
 				88BBFA9121AB88CB0012BA51 /* YFSearceDetailTimeTableViewCell.h */,
 				88BBFA9221AB88CB0012BA51 /* YFSearceDetailTimeTableViewCell.m */,
 				88BBFA9321AB88CB0012BA51 /* YFSearceDetailTimeTableViewCell.xib */,
+				88DAAC3121AE7A8800A4C8CD /* YFLogisticsTrackMapView.h */,
+				88DAAC3221AE7A8800A4C8CD /* YFLogisticsTrackMapView.m */,
+				88DAAC3421AE7A9500A4C8CD /* YFLogisticsTrackMapView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2230,6 +2253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88441A3F20AC41A00089F330 /* YFNullView.xib in Resources */,
+				88DAAC3521AE7A9500A4C8CD /* YFLogisticsTrackMapView.xib in Resources */,
 				88FD5BD6218FE769003B188F /* YFCancelOtherReasonTableViewCell.xib in Resources */,
 				884A7D0C209D45FC007F3908 /* YFOrderDetailMapTableViewCell.xib in Resources */,
 				88831E3120D0F2A6006E317D /* YFMyMaturingCarTableViewCell.xib in Resources */,
@@ -2478,12 +2502,14 @@
 				88568B5D20D35F7C0058884A /* MANaviAnnotation.m in Sources */,
 				88568B5A20D35F550058884A /* MANaviRoute.m in Sources */,
 				88F7DBC520AD5530008AD50E /* Reachability.m in Sources */,
+				88398BD321AFD81B00345FDA /* YFSearchListModel.m in Sources */,
 				8819CD332096F7B300283B81 /* YFHistoryListViewController.m in Sources */,
 				886747732106C4E800FBF2A4 /* YFHomePostCollectionViewCell.m in Sources */,
 				886D82B72147B51C005C0893 /* YFSpecialLineOtherFreeViewController.m in Sources */,
 				880DB91E20A55DAB008E18B6 /* YFLookSignCollectionViewCell.m in Sources */,
 				884D44BB20A45E5500A6BFB1 /* YFOrderDetailModel.m in Sources */,
 				88C0645321056E46000ABDCF /* YFPlatformViewModel.m in Sources */,
+				88DAAC3321AE7A8800A4C8CD /* YFLogisticsTrackMapView.m in Sources */,
 				8867B5572150CBA400EB4723 /* YFSpecialDetailPaymentTableViewCell.m in Sources */,
 				88568B7720D3AA730058884A /* YFCarSourceService.m in Sources */,
 				881FEC1A20A146E500D93F2A /* YFItemCollectionViewCell.m in Sources */,
@@ -2608,6 +2634,7 @@
 				8887277A209C590A00C0F551 /* YFChooseDriverTableViewCell.m in Sources */,
 				88DA6DE120C8E1770095C634 /* YFQueryResultViewController.m in Sources */,
 				881FEC0A20A1328900D93F2A /* NSArray+AddressMsg.m in Sources */,
+				88DAAC3821AE7E4E00A4C8CD /* YFLogisticsTrackViewController.m in Sources */,
 				883C1C3C20A070C400D0D9FA /* YFDriverListModel.m in Sources */,
 				88DA6DED20C8FD920095C634 /* YFUserCenterViewModel.m in Sources */,
 				8814A0E721A7DFD1007E6D4B /* YFSearchBarView.m in Sources */,
@@ -2637,6 +2664,7 @@
 				8868D1EA209462ED009FB681 /* WKRequest.m in Sources */,
 				88165DA320A9231F00B67523 /* JMUpdataImage.m in Sources */,
 				888703C021AB7D2100EB3300 /* YFSearchDetailViewController.m in Sources */,
+				88136E4921B0DAF600D3ACB1 /* YFSearchDetailModel.m in Sources */,
 				889ACA4521463DAC00A65AEB /* YFHomeItemView.m in Sources */,
 				88165DA920A9380700B67523 /* UserData.m in Sources */,
 				881FEC3620A1874900D93F2A /* YFOtherRequirementView.m in Sources */,

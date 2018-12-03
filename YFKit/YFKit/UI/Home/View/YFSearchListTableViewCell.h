@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class YFSearchListModel;
 @interface YFSearchListTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *companyName;
 @property (weak, nonatomic) IBOutlet UILabel *orderNum;
-
+@property (nonatomic, strong) YFSearchListModel *model;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 @end
 

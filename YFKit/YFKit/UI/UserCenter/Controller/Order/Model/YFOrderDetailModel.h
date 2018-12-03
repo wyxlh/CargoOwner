@@ -32,8 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *pickGoodsDateStart;
 @property (nonatomic, copy) NSString *driverMobile;
 @property (nonatomic, copy) NSString *taskFee;
-@property (nonatomic, copy) NSArray  *goodsItem;
-@property (nonatomic, strong) NSArray *details;
+@property (nonatomic, strong) NSArray  *goodsItem;
+@property (nonatomic, strong) NSArray  *details;
 @property (nonatomic, copy) NSString *remark;
 /**
  出发地经纬度

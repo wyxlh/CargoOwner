@@ -7,6 +7,7 @@
 //
 
 #import "YFSearchGoodsItemTableViewCell.h"
+#import "YFSearchDetailModel.h"
 
 @implementation YFSearchGoodsItemTableViewCell
 
@@ -25,6 +26,24 @@ static NSString *const cellId = @"YFSearchGoodsItemTableViewCell";
     [super awakeFromNib];
     self.selectionStyle = 0;
     self.goodsName.text = @"哈哈啊哈哈哈\n哈哈哈哈哈哈多或多\n附属设施";
+}
+
+- (void)setModel:(YFSearchDetailModel *)model {
+    self.startAddress.text = model.startingPlace;
+    self.endAddress.text = model.destination;
+    NSMutableArray *goodsMsgList = [NSMutableArray new];
+    if (model.goodInfo.count == 1) {
+        goodInfoModel *dmodel = [model.goodInfo firstObject];
+        self.goodsName.text = [NSString getGoodsName:dmodel.goodName GoodsWeight:dmodel.goodWeight GoodsVolume:dmodel.volumeWeight GoodsNum:dmodel.number];
+    }else{
+        for (goodInfoModel *dmodel in model.goodInfo) {
+            NSString *goodMsg = [NSString getGoodsName:dmodel.goodName GoodsWeight:dmodel.goodWeight GoodsVolume:dmodel.volumeWeight GoodsNum:dmodel.number];
+            [goodsMsgList addObject:goodMsg];
+        }
+        
+    }
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

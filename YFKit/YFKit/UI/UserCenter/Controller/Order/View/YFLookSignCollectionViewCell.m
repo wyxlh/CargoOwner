@@ -8,6 +8,7 @@
 
 #import "YFLookSignCollectionViewCell.h"
 #import "YFLookSignModel.h"
+
 @implementation YFLookSignCollectionViewCell
 
 - (void)awakeFromNib {
@@ -20,6 +21,13 @@
     self.signPeople.text        = [NSString stringWithFormat:@"签收人 : %@",[NSString getNullOrNoNull:model.signUser]];
     self.signTime.text          = [NSString stringWithFormat:@"%@",[NSString getNullOrNoNull:model.signTime]];
     self.signType.text          = [NSString stringWithFormat:@"%@",[NSString getNullOrNoNull:model.opStatue]];
+}
+
+- (void)setSearchModel:(YFSearchLookSignModel *)searchModel {
+    self.orderNum.text          = [NSString stringWithFormat:@"订单号 : %@",[NSString getNullOrNoNull:searchModel.billId]];
+    self.signPeople.text        = [NSString stringWithFormat:@"签收人 : %@",[NSString getNullOrNoNull:searchModel.signatory]];
+    self.signTime.text          = [NSString stringWithFormat:@"%@",[NSString getNullOrNoNull:searchModel.dateTime]];
+    self.signType.text          = [NSString stringWithFormat:@"%@",[NSString getNullOrNoNull:searchModel.signStatus]];
 }
 
 @end

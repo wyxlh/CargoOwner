@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface YFLookSignModel : NSObject
 NS_ASSUME_NONNULL_BEGIN
+@interface YFLookSignModel : NSObject
+
 @property (nonatomic, copy) NSString *taskId;
 /**
  状态
@@ -26,8 +26,20 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *signUser;;
 @property (nonatomic, copy) NSString *signTime;
 @property (nonatomic, strong) NSArray *opPicurls;
-NS_ASSUME_NONNULL_END
+
 @end
+
+@interface YFSearchLookSignModel : NSObject
+@property (nonatomic, copy) NSString *billId;
+@property (nonatomic, copy) NSString *dateTime;
+@property (nonatomic, copy) NSString *remarks;
+@property (nonatomic, copy) NSString *signStatus;
+@property (nonatomic, copy) NSString *signatory;
+@property (nonatomic, strong) NSArray *pictureUrl;
+@end
+
+
+NS_ASSUME_NONNULL_END
 
 
 

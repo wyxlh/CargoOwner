@@ -121,6 +121,7 @@
             @strongify(self)
             YFSearchViewController *search          = [YFSearchViewController new];
             search.hidesBottomBarWhenPushed         = YES;
+            search.searchType                       = YFSearchOrderShowHistoryType;
             [self.navigationController pushViewController:search animated:NO];
         };
     }

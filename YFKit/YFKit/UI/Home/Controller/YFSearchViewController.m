@@ -12,27 +12,33 @@
 #import "YFSearchHistoryModel.h"
 #import "YFSearchSectionHeadView.h"
 #import "YFSearchDetailViewController.h"
+#import "YFSearchListModel.h"
 
 @interface YFSearchViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong, nullable) UITableView *tableView;
 @property (nonatomic, strong, nullable) YFSearchHeadView *searchHeadView;
 @property (nonatomic, strong, nullable) YFSearchHistoryModel *searchModel;
+@property (nonatomic, strong, nullable) NSMutableArray <YFSearchListModel *> *dataArr;//搜索数据
+@property (nonatomic, strong, nullable) NSMutableArray <YFSearchListModel *> *historyArr;//历史数据
 @end
 
 @implementation YFSearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.historyArr = [YFSearchListModel mj_objectArrayWithKeyValuesArray:[self.searchModel readData]];
     [self.tableView reloadData];
+
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.searchModel readData] count];
+    return self.searchType == YFSearchOrderShowHistoryType ? [[self.searchModel readData] count] : self.dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YFSearchListTableViewCell *cell             = [YFSearchListTableViewCell cellWithTableView:tableView];
+    cell.model                                  = self.searchType == YFSearchOrderShowResultType ? self.dataArr[indexPath.row] : self.historyArr[indexPath.row];
     return cell;
 }
 
@@ -50,8 +56,69 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //存为历史数据
+    [self.searchModel saveData:[self reorSearchData:self.dataArr[indexPath.row]]];
     YFSearchDetailViewController *detail        = [YFSearchDetailViewController new];
+    YFSearchListModel *model                    = self.searchType == YFSearchOrderShowResultType ? self.dataArr[indexPath.row] : self.historyArr[indexPath.row];
+    detail.billIdBlock(model.orderNum).syscodeBlock(model.syscode).typeBlock(model.type);
     [self.navigationController pushViewController:detail animated:YES];
+}
+
+/**
+ 搜索订单信息
+
+ @param keyWords 搜索关键字
+ */
+- (void)netSearchOrderMessageWithKeyWords:(NSString *)keyWords {
+    NSMutableDictionary *parms                  = [NSMutableDictionary dictionary];
+    [parms safeSetObject:keyWords forKey:@"billId"];
+    @weakify(self)
+    [WKRequest getWithURLString:@"bill/v114/search/bill.do?" parameters:parms success:^(WKBaseModel *baseModel) {
+        @strongify(self)
+        if (CODE_ZERO) {
+            [self netSuccessWithModel:baseModel AndKeyWords:keyWords];
+        }else{
+            [YFToast showMessage:baseModel.message inView:self.view];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)netSuccessWithModel:(WKBaseModel *)baseModel AndKeyWords:(NSString *)keyWords{
+    self.dataArr                               = [YFSearchListModel mj_objectArrayWithKeyValuesArray:[[baseModel.mDictionary safeJsonObjForKey:@"data"] safeJsonObjForKey:@"companyInfos"]];
+    //改变状态
+    self.searchType                            = YFSearchOrderShowResultType;
+    
+    if (self.dataArr.count == 0) {
+        //当没有数据的时候
+        [YFToast showMessage:@"暂无数据" inView:self.view];
+        [self.dataArr removeAllObjects];
+    }else{
+        for (YFSearchListModel *model in self.dataArr) {
+            model.orderNum                         = keyWords;
+        }
+        if (self.dataArr.count == 1) {
+            //如果只搜索出来一条数据 就直接存起来 如果是多条数据那么需要 在点击的时候在存
+            [self.searchModel saveData:[self reorSearchData:[self.dataArr firstObject]]];
+        }
+    }
+    [self.tableView reloadData];
+}
+
+/**
+ 重组搜索的数据
+ */
+- (NSMutableArray *)reorSearchData:(YFSearchListModel *)searhModel {
+    NSMutableArray *searchArray                 = [NSMutableArray new];
+    NSMutableDictionary *dict                   = [NSMutableDictionary dictionary];
+    [dict safeSetObject:searhModel.orderNum forKey:@"orderNum"];
+    [dict safeSetObject:searhModel.companyname forKey:@"companyname"];
+    [dict safeSetObject:searhModel.type forKey:@"type"];
+    [dict safeSetObject:searhModel.syscode forKey:@"syscode"];
+    [dict safeSetObject:searhModel.Id forKey:@"id"];
+    [searchArray addObject:dict];
+    return searchArray;
 }
 
 #pragma mark TableView
@@ -83,8 +150,16 @@
         }];
         _searchHeadView.searchClickBlock = ^(NSString * _Nonnull searchText) {
             @strongify(self)
-            [self.searchModel saveData:searchText];
+            [self netSearchOrderMessageWithKeyWords:searchText];
         };
+        [[_searchHeadView.searchTF rac_textSignal] subscribeNext:^(id x) {
+            @strongify(self)
+            NSString *searchTest        = [NSString stringWithFormat:@"%@",x];
+            if (searchTest.length == 0) {
+                self.searchType         = YFSearchOrderShowHistoryType;
+                [self.tableView reloadData];
+            }
+        }];
         [self.view addSubview:_searchHeadView];
     }
     return _searchHeadView;
@@ -95,7 +170,6 @@
         _searchModel = [[YFSearchHistoryModel alloc]init];
     }
     return _searchModel;
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated {

@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class YFSearchDetailModel;
 @interface YFSearchGoodsItemTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *endAddress;
 @property (weak, nonatomic) IBOutlet UILabel *startAddress;
 @property (weak, nonatomic) IBOutlet UILabel *goodsName;
 @property (weak, nonatomic) IBOutlet UILabel *driver;
-
+@property (nonatomic, strong) YFSearchDetailModel *model;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end
