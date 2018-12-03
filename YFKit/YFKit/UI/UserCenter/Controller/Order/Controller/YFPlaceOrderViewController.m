@@ -353,6 +353,10 @@
         alertMsg                                 = @"实际运费不能超过500万";
     }else if ([NSString isBlankString:self.driverModel.driverId]){
         alertMsg                                 = @"请选择指定司机";
+    }else if (self.startSiteLatitude == 0) {
+        alertMsg                                 = @"位置转化失败,请重新选择出发地";
+    }else if (self.endSiteLatitude == 0) {
+        alertMsg                                 = @"位置转化失败,请重新选择出目的地";
     }
     
     if (alertMsg.length != 0) {
@@ -863,9 +867,5 @@
     
     [self.tableView reloadData];
 }
-
-
-
-
 
 @end

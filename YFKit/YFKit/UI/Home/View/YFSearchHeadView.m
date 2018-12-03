@@ -14,8 +14,8 @@
     [super awakeFromNib];
     self.searchTF.delegate = self;
 //    self.searchTF.text = @"D201800049599";
-    self.searchTF.text = @"R201800000028";
-//    self.searchTF.text = @"WYF201800000472";
+//    self.searchTF.text = @"R201800000028";
+    self.searchTF.text = @"WYF201800000472";
     @weakify(self);
     RACSignal *programmerSignal = [self rac_signalForSelector:@selector(textFieldShouldReturn:) fromProtocol:@protocol(UITextFieldDelegate)];
     [programmerSignal subscribeNext:^(RACTuple* x) {
@@ -30,7 +30,7 @@
         if ([_searchTF.text removeWhiteSpace].length>0){
             self.searchClickBlock(_searchTF.text);
         }else{
-            [YFToast showMessage:@"请输入订单号"];
+            [YFToast showMessage:@"请输入单号"];
         }
     }
 }

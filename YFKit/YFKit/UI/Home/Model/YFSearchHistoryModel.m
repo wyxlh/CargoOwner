@@ -19,7 +19,7 @@
 - (void)saveData:(NSMutableArray *)searchArray {
     
     NSMutableArray *array = [NSMutableArray arrayWithArray:[self readData]];
-    [array addObjectsFromArray:searchArray];
+    [array insertObjects:searchArray atIndexes:[NSIndexSet indexSetWithIndex:0]];
     //过滤重复数据
     NSMutableArray *categoryArray = [[NSMutableArray alloc] init];
     for (unsigned i = 0; i < [array count]; i++){
@@ -28,7 +28,7 @@
         }
     }
     if (categoryArray.count > 6) {
-        [categoryArray removeObjectAtIndex:0];
+        [categoryArray removeLastObject];
     }
     //序列化
     NSData  *jsonData = [NSJSONSerialization dataWithJSONObject:categoryArray options:NSJSONWritingPrettyPrinted error:nil];

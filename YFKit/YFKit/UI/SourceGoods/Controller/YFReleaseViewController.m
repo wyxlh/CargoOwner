@@ -268,6 +268,10 @@
         if ([self.freeTF.text integerValue] >5000000) {
             alertMsg                             = @"期望运费不能超过500万";
         }
+    }else if (self.startSiteLatitude == 0) {
+        alertMsg                                 = @"位置转化失败,请重新选择出发地";
+    }else if (self.endSiteLatitude == 0) {
+        alertMsg                                 = @"位置转化失败,请重新选择出目的地";
     }
     
     if (alertMsg.length != 0) {

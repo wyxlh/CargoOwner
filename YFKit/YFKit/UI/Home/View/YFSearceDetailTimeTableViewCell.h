@@ -16,20 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *detailDes;
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UIButton *lookBtn;
-
 @property (weak, nonatomic) IBOutlet UILabel *topLine;
-
 @property (weak, nonatomic) IBOutlet UILabel *bottomLine;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnWidth;
-
-@property (nonatomic, assign)NSInteger index;
-/**
- 第一个 cell 的下面的线的约束要小一点, 后面的要大一点, 这是图片引起的
- */
+@property (nonatomic, assign) NSInteger index;
+/**订单所有者*/
+@property (nonatomic, copy) NSString *creator;
+/**第一个 cell 的下面的线的约束要小一点, 后面的要大一点, 这是图片引起的*/
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomCons;
-
 @property (nonatomic, strong) detailsModel *model;
-
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

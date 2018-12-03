@@ -26,12 +26,10 @@ static NSString *const cellID = @"YFSearchDetailMapTableViewCell";
     [super awakeFromNib];
     self.selectionStyle = 0;
     [self.mapBgView addSubview:self.mapView];
-    
 }
 
 - (void)setModel:(YFSearchDetailModel *)model {
     BOOL isComplet                      = NO;
-    
     for (detailsModel *dModel in model.details) {
         if ([dModel.status containsString:@"签收"]) {
             isComplet                   = YES;

@@ -25,7 +25,7 @@ static NSString *const cellId = @"YFSearchGoodsItemTableViewCell";
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = 0;
-    self.goodsName.text = @"哈哈啊哈哈哈\n哈哈哈哈哈哈多或多\n附属设施";
+    self.goodsName.text = @" ";
 }
 
 - (void)setModel:(YFSearchDetailModel *)model {

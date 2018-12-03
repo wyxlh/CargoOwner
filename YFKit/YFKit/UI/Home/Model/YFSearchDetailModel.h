@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YFSearchDetailModel : NSObject
 @property (nonatomic, copy) NSString *billWRId;
 @property (nonatomic, copy) NSString *billWRType;
+/**
+ 所有者
+ */
+@property (nonatomic, copy) NSString *creator;
 @property (nonatomic, copy) NSString *consignor;
 /**
  目的地

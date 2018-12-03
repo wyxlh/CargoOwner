@@ -16,6 +16,7 @@
 #import "YFOrderDetailModel.h"
 #import "YFOrderTrajectoryModel.h"
 #import "YFDriverMapDetailViewController.h"
+
 @interface YFOrderDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong, nullable) UITableView *tableView;
 @property (nonatomic, assign) BOOL isSelect;//判断火车信息的显示与隐藏

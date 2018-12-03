@@ -26,8 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.historyArr = [YFSearchListModel mj_objectArrayWithKeyValuesArray:[self.searchModel readData]];
-    [self.tableView reloadData];
 
 }
 
@@ -44,11 +42,11 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     YFSearchSectionHeadView *sectionView        = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"YFSearchSectionHeadView" owner:nil options:nil] firstObject];
-    return sectionView;
+    return self.searchType == YFSearchOrderShowHistoryType ? sectionView : [UIView new];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 36.0f;
+    return self.searchType == YFSearchOrderShowHistoryType ? 36.0f : CGFLOAT_MIN;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -57,7 +55,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //存为历史数据
-    [self.searchModel saveData:[self reorSearchData:self.dataArr[indexPath.row]]];
+    [self.searchModel saveData:[self reorSearchData:self.searchType == YFSearchOrderShowResultType ? self.dataArr[indexPath.row] : self.historyArr[indexPath.row]]];
+    //跳转到详情
     YFSearchDetailViewController *detail        = [YFSearchDetailViewController new];
     YFSearchListModel *model                    = self.searchType == YFSearchOrderShowResultType ? self.dataArr[indexPath.row] : self.historyArr[indexPath.row];
     detail.billIdBlock(model.orderNum).syscodeBlock(model.syscode).typeBlock(model.type);
@@ -94,6 +93,7 @@
         //当没有数据的时候
         [YFToast showMessage:@"暂无数据" inView:self.view];
         [self.dataArr removeAllObjects];
+        [self.tableView reloadData];
     }else{
         for (YFSearchListModel *model in self.dataArr) {
             model.orderNum                         = keyWords;
@@ -101,9 +101,14 @@
         if (self.dataArr.count == 1) {
             //如果只搜索出来一条数据 就直接存起来 如果是多条数据那么需要 在点击的时候在存
             [self.searchModel saveData:[self reorSearchData:[self.dataArr firstObject]]];
+            YFSearchDetailViewController *detail        = [YFSearchDetailViewController new];
+            YFSearchListModel *model                    = [self.dataArr firstObject];
+            detail.billIdBlock(model.orderNum).syscodeBlock(model.syscode).typeBlock(model.type);
+            [self.navigationController pushViewController:detail animated:YES];
+        }else{
+            [self.tableView reloadData];
         }
     }
-    [self.tableView reloadData];
 }
 
 /**
@@ -175,6 +180,10 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
+    self.searchType = YFSearchOrderShowHistoryType;
+    self.historyArr = [YFSearchListModel mj_objectArrayWithKeyValuesArray:[self.searchModel readData]];
+    [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

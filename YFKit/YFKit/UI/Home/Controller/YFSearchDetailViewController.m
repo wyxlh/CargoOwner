@@ -15,8 +15,9 @@
 #import "YFLookSignInViewController.h"
 
 @interface YFSearchDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong ,nullable) UITableView *tableView;
+@property (nonatomic, strong, nullable) UITableView *tableView;
 @property (nonatomic, strong, nullable) YFSearchDetailModel *mainModel;
+@property (nonatomic, assign)           BOOL isHaveDriver;//是否有司机信息, 没有就不显示地图
 @end
 
 @implementation YFSearchDetailViewController
@@ -47,16 +48,21 @@
 
 - (void)netWorkSuccessWithModel:(WKBaseModel *)baseModel {
     self.mainModel    = [YFSearchDetailModel mj_objectWithKeyValues:[baseModel.mDictionary safeJsonObjForKey:@"data"]];
+    self.isHaveDriver = self.mainModel.driverLatitude == 0 ? NO : YES;
     [self.tableView reloadData];
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return self.isHaveDriver ?  3 : 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return section == 2 ? self.mainModel.details.count : 1;
+    if (self.isHaveDriver) {
+        return section == 2 ? self.mainModel.details.count : 1;
+    }
+    return section == 1 ? self.mainModel.details.count : 1;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,7 +71,7 @@
         YFSearchGoodsItemTableViewCell *cell   = [YFSearchGoodsItemTableViewCell cellWithTableView:tableView];
         cell.model                             = self.mainModel;
         return cell;
-    }else if (indexPath.section == 1) {
+    }else if (indexPath.section == 1 && self.isHaveDriver) {
         //地图
         YFSearchDetailMapTableViewCell *cell   = [YFSearchDetailMapTableViewCell cellWithTableView:tableView];
         cell.model                             = self.mainModel;
@@ -74,12 +80,12 @@
         //物流轨迹
         YFSearceDetailTimeTableViewCell *cell  = [YFSearceDetailTimeTableViewCell cellWithTableView:tableView];
         cell.index                             = indexPath.row;
+        cell.creator                           = self.mainModel.creator;
         cell.model                             = self.mainModel.details[indexPath.row];
         cell.bottomLine.hidden                 = indexPath.row == self.mainModel.details.count - 1;
         @weakify(self)
         [[[cell.lookBtn rac_signalForControlEvents:UIControlEventTouchUpInside]     takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
             @strongify(self)
-            KUSERNOTLOGIN;
             YFLookSignInViewController *look   = [YFLookSignInViewController new];
             look.taskId                        = self.billId;
             look.isSearchLookType              = YES;
@@ -91,7 +97,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
+    if (indexPath.section == 1 && self.isHaveDriver) {
         YFLogisticsTrackViewController *track = [YFLogisticsTrackViewController new];
         track.mainModel                       = self.mainModel;
         [self.navigationController pushViewController:track animated:YES];
