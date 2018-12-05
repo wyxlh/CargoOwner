@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *destination;
 @property (nonatomic, assign) CGFloat sendSiteLatitude;
 @property (nonatomic, assign) CGFloat sendSiteLongitude;
+/**
+ 是否展示地图
+ */
+@property (nonatomic, assign) BOOL isShowMap;
 @property (nonatomic, copy) NSString *driverName;
 @property (nonatomic, copy) NSString *driverPhone;
 /**

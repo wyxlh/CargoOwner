@@ -17,7 +17,6 @@
 @interface YFSearchDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong, nullable) UITableView *tableView;
 @property (nonatomic, strong, nullable) YFSearchDetailModel *mainModel;
-@property (nonatomic, assign)           BOOL isHaveDriver;//是否有司机信息, 没有就不显示地图
 @end
 
 @implementation YFSearchDetailViewController
@@ -27,7 +26,7 @@
     [self netWork];
 }
 
-#pragma mark 获取订单详情和司机位置
+#pragma mark 获取订单详情
 - (void)netWork {
     NSMutableDictionary *parms      = [NSMutableDictionary dictionary];
     [parms safeSetObject:self.billId forKey:@"billId"];
@@ -39,7 +38,7 @@
         if (CODE_ZERO) {
             [self netWorkSuccessWithModel:baseModel];
         }else{
-            [YFToast showMessage:baseModel.message inView:self.view];
+            [YFToast showMessage:@"暂无详情" inView:self.view];
         }
     } failure:^(NSError *error) {
         
@@ -48,21 +47,22 @@
 
 - (void)netWorkSuccessWithModel:(WKBaseModel *)baseModel {
     self.mainModel    = [YFSearchDetailModel mj_objectWithKeyValues:[baseModel.mDictionary safeJsonObjForKey:@"data"]];
-    self.isHaveDriver = self.mainModel.driverLatitude == 0 ? NO : YES;
+    self.mainModel.isShowMap = self.mainModel.driverLatitude == 0 ? NO : YES;
     [self.tableView reloadData];
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.isHaveDriver ?  3 : 2;
+    return self.mainModel.isShowMap ?  3 : 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.isHaveDriver) {
-        return section == 2 ? self.mainModel.details.count : 1;
+    if (self.mainModel.isShowMap) {
+        //最多显示50条记录
+        return section == 2 ? (self.mainModel.details.count > 50 ? 0 : self.mainModel.details.count) : 1;
     }
-    return section == 1 ? self.mainModel.details.count : 1;
-    
+    return section == 1 ? (self.mainModel.details.count > 50 ? 0 : self.mainModel.details.count) : 1;
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,7 +71,7 @@
         YFSearchGoodsItemTableViewCell *cell   = [YFSearchGoodsItemTableViewCell cellWithTableView:tableView];
         cell.model                             = self.mainModel;
         return cell;
-    }else if (indexPath.section == 1 && self.isHaveDriver) {
+    }else if (indexPath.section == 1 && self.mainModel.isShowMap) {
         //地图
         YFSearchDetailMapTableViewCell *cell   = [YFSearchDetailMapTableViewCell cellWithTableView:tableView];
         cell.model                             = self.mainModel;
@@ -97,7 +97,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1 && self.isHaveDriver) {
+    if (indexPath.section == 1 && self.mainModel.isShowMap) {
         YFLogisticsTrackViewController *track = [YFLogisticsTrackViewController new];
         track.mainModel                       = self.mainModel;
         [self.navigationController pushViewController:track animated:YES];

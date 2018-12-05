@@ -9,6 +9,8 @@
 #import "YFSearchDetailMapTableViewCell.h"
 #import "YFLogisticsTrackMapView.h"
 #import "YFSearchDetailModel.h"
+#import "YFInverGeoModel.h"
+#import "YFTwoInverGeoModel.h"
 
 @implementation YFSearchDetailMapTableViewCell
 
@@ -36,17 +38,52 @@ static NSString *const cellID = @"YFSearchDetailMapTableViewCell";
             break;
         }
     }
-    self.mapView.startCoordinate        = CLLocationCoordinate2DMake(model.sendSiteLatitude, model.sendSiteLongitude);
     
     if (isComplet) {
-        //如果已经签收的单子就只需要 起始地和目的地
-        self.mapView.destinationCoordinate  = CLLocationCoordinate2DMake(model.recvSiteLatitude, model.recvSiteLongitude);
+        //订单已完成
+        if (model.sendSiteLatitude == 0 || model.recvSiteLatitude == 0) {
+            //如果经纬度出现空的情况
+            [[YFInverGeoModel sharedYFInverGeoModel] getLatitudeAndlongitudeWithAddress:model.startingPlace];
+            WS(weakSelf)
+            [YFInverGeoModel sharedYFInverGeoModel].latitudeAndlongitudeBlock = ^(CGFloat startLatitude, CGFloat startLongitude) {
+                //经纬度完整的情况
+                weakSelf.mapView.startCoordinate = CLLocationCoordinate2DMake(startLatitude, startLongitude);
+                [[YFTwoInverGeoModel sharedYFTwoInverGeoModel] getLatitudeAndlongitudeWithAddress:model.destination];
+                [YFTwoInverGeoModel sharedYFTwoInverGeoModel].latitudeAndlongitudeBlock = ^(CGFloat endLatitude, CGFloat endLongitude) {
+                    weakSelf.mapView.destinationCoordinate = CLLocationCoordinate2DMake(endLatitude, endLongitude);
+                    weakSelf.mapView.isCompleteOrder    = isComplet;
+                };
+            };
+        }else {
+            //经纬度完整的情况
+            self.mapView.startCoordinate            = CLLocationCoordinate2DMake(model.sendSiteLatitude, model.sendSiteLongitude);
+            //如果已经签收的单子就只需要 起始地和目的地
+            self.mapView.destinationCoordinate      = CLLocationCoordinate2DMake(model.recvSiteLatitude, model.recvSiteLongitude);
+            self.mapView.isCompleteOrder            = isComplet;
+        }
     }else {
-        //没有签收的单子,目的地的位置就是司机的位置
-        self.mapView.destinationCoordinate  = CLLocationCoordinate2DMake(model.driverLatitude, model.driverLongitude);
+        //订单未完成
+        if (model.sendSiteLatitude == 0 && model.driverLatitude != 0) {
+            //经纬度为空
+            [[YFInverGeoModel sharedYFInverGeoModel] getLatitudeAndlongitudeWithAddress:model.startingPlace];
+            WS(weakSelf)
+            [YFInverGeoModel sharedYFInverGeoModel].latitudeAndlongitudeBlock = ^(CGFloat startLatitude, CGFloat startLongitude) {
+                //经纬度完整的情况
+                weakSelf.mapView.startCoordinate       = CLLocationCoordinate2DMake(startLatitude, startLongitude);
+                weakSelf.mapView.destinationCoordinate = CLLocationCoordinate2DMake(model.driverLatitude, model.driverLongitude);
+                weakSelf.mapView.isCompleteOrder       = isComplet;
+            };
+        }else {
+            //经纬度完整
+            if (model.driverLatitude == 0) {
+                return;
+            }
+            self.mapView.startCoordinate             = CLLocationCoordinate2DMake(model.sendSiteLatitude, model.sendSiteLongitude);
+            //没有签收的单子,目的地的位置就是司机的位置
+            self.mapView.destinationCoordinate       = CLLocationCoordinate2DMake(model.driverLatitude, model.driverLongitude);
+            self.mapView.isCompleteOrder             = isComplet;
+        }
     }
-    self.mapView.isCompleteOrder        = isComplet;
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

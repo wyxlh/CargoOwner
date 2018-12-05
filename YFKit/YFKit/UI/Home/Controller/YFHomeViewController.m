@@ -27,7 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
-    
 }
 
 - (void)setUI {
@@ -115,7 +114,7 @@
 - (YFSearchBarView *)searchBar {
     if (!_searchBar) {
         _searchBar                                  = [[[NSBundle mainBundle] loadNibNamed:@"YFSearchBarView" owner:nil options:nil] firstObject];
-        _searchBar.frame                            = CGRectMake(16, ISIPHONEX ? (24 + XHEIGHT) : 24, ScreenWidth - 32, 35);
+        _searchBar.frame                            = CGRectMake(16, ISIPHONEX ? (24 + XHEIGHT) : (YFSysVersion < 11.0 ? 40 : 24), ScreenWidth - 32, 35);
         @weakify(self)
         _searchBar.searchBarBlock                   = ^{
             @strongify(self)

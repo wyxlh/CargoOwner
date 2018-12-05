@@ -49,6 +49,7 @@ static const NSInteger RoutePlanningPaddingEdge                    = 20;
 
 - (void)setIsCompleteOrder:(BOOL)isCompleteOrder {
     _isCompleteOrder            = isCompleteOrder;
+    
     [self addDefaultAnnotations];
     
     [self searchRoutePlanningDrive];

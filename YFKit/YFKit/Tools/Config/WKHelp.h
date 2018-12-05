@@ -46,6 +46,8 @@
 
 #define YFWindow        [UIApplication sharedApplication].keyWindow
 
+#define YFSysVersion [[UIDevice currentDevice] systemVersion].floatValue
+
 // 设置view的圆角和边框
 #define SKViewsBorder(View,radius,width,color)\
 \

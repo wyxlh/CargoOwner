@@ -86,15 +86,16 @@
 
 - (void)netSuccessWithModel:(WKBaseModel *)baseModel AndKeyWords:(NSString *)keyWords{
     self.dataArr                               = [YFSearchListModel mj_objectArrayWithKeyValuesArray:[[baseModel.mDictionary safeJsonObjForKey:@"data"] safeJsonObjForKey:@"companyInfos"]];
-    //改变状态
-    self.searchType                            = YFSearchOrderShowResultType;
     
     if (self.dataArr.count == 0) {
         //当没有数据的时候
         [YFToast showMessage:@"暂无数据" inView:self.view];
-        [self.dataArr removeAllObjects];
-        [self.tableView reloadData];
+//        [self.dataArr removeAllObjects];
+//        [self.tableView reloadData];
     }else{
+        //改变状态
+        self.searchType                            = YFSearchOrderShowResultType;
+        
         for (YFSearchListModel *model in self.dataArr) {
             model.orderNum                         = keyWords;
         }

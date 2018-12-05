@@ -145,7 +145,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         NSMutableArray *items = @[].mutableCopy;
-        for (int i = 0; i < self.mainModel.opPicurls.count; i++) {
+        for (int i = 0; i < (self.isSearchLookType ? self.searchMainModel.pictureUrl.count : self.mainModel.opPicurls.count); i++) {
             YFLookImgItemCollectionViewCell *cell = (YFLookImgItemCollectionViewCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
             NSString *url = [NSString stringWithFormat:@"%@",self.isSearchLookType ? self.searchMainModel.pictureUrl[i] : self.mainModel.opPicurls[i]];
             KSPhotoItem *item = [KSPhotoItem itemWithSourceView:cell.imgView imageUrl:[NSURL URLWithString:url]];

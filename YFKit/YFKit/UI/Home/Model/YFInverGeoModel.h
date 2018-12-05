@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SKSingle.h"
+
 @interface YFInverGeoModel : NSObject
 SKSingleH(YFInverGeoModel)
 /**

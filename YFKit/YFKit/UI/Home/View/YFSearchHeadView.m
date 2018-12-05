@@ -13,9 +13,6 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
     self.searchTF.delegate = self;
-//    self.searchTF.text = @"D201800049599";
-//    self.searchTF.text = @"R201800000028";
-    self.searchTF.text = @"WYF201800000472";
     @weakify(self);
     RACSignal *programmerSignal = [self rac_signalForSelector:@selector(textFieldShouldReturn:) fromProtocol:@protocol(UITextFieldDelegate)];
     [programmerSignal subscribeNext:^(RACTuple* x) {

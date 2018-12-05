@@ -321,7 +321,6 @@
 		88AF317320E9C9D4004A0B73 /* YFUpdataPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AF317220E9C9D4004A0B73 /* YFUpdataPhotoView.m */; };
 		88AF317520E9C9DD004A0B73 /* YFUpdataPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88AF317420E9C9DD004A0B73 /* YFUpdataPhotoView.xib */; };
 		88AF317B20EA3060004A0B73 /* AttributedLbl.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AF317920EA3060004A0B73 /* AttributedLbl.m */; };
-		88AF317C20EA3060004A0B73 /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AF317A20EA3060004A0B73 /* UILabel+YBAttributeTextTapAction.m */; };
 		88BA2F14209AFBA900C8FC8D /* YFPlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BA2F13209AFBA900C8FC8D /* YFPlaceOrderViewController.m */; };
 		88BA2F1A209AFCA000C8FC8D /* YFOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BA2F19209AFCA000C8FC8D /* YFOrderListViewController.m */; };
 		88BA2F20209B0A4000C8FC8D /* YFGoodsSourceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BA2F1F209B0A4000C8FC8D /* YFGoodsSourceDetailViewController.m */; };
@@ -921,9 +920,7 @@
 		88AF317220E9C9D4004A0B73 /* YFUpdataPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFUpdataPhotoView.m; sourceTree = "<group>"; };
 		88AF317420E9C9DD004A0B73 /* YFUpdataPhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFUpdataPhotoView.xib; sourceTree = "<group>"; };
 		88AF317720EA3060004A0B73 /* AttributedLbl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedLbl.h; sourceTree = "<group>"; };
-		88AF317820EA3060004A0B73 /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
 		88AF317920EA3060004A0B73 /* AttributedLbl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedLbl.m; sourceTree = "<group>"; };
-		88AF317A20EA3060004A0B73 /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		88BA2F12209AFBA900C8FC8D /* YFPlaceOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFPlaceOrderViewController.h; sourceTree = "<group>"; };
 		88BA2F13209AFBA900C8FC8D /* YFPlaceOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFPlaceOrderViewController.m; sourceTree = "<group>"; };
 		88BA2F18209AFCA000C8FC8D /* YFOrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFOrderListViewController.h; sourceTree = "<group>"; };
@@ -2071,8 +2068,6 @@
 			children = (
 				88AF317720EA3060004A0B73 /* AttributedLbl.h */,
 				88AF317920EA3060004A0B73 /* AttributedLbl.m */,
-				88AF317820EA3060004A0B73 /* UILabel+YBAttributeTextTapAction.h */,
-				88AF317A20EA3060004A0B73 /* UILabel+YBAttributeTextTapAction.m */,
 			);
 			path = AttributedString;
 			sourceTree = "<group>";
@@ -2557,7 +2552,6 @@
 				886396D02175E417006DDC81 /* YFLoginModel.m in Sources */,
 				88F9BB1120BBDCEF00DB319A /* YukiWebViewController.m in Sources */,
 				8832B3D821758045004E9114 /* YFUmengTracking.m in Sources */,
-				88AF317C20EA3060004A0B73 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				880DB92D20A5997E008E18B6 /* YFSortViewTableViewCell.m in Sources */,
 				8855DC4020A2F88E00D63BEC /* YFSettingViewController.m in Sources */,
 				88746B6A20B69DD7005D6503 /* YFAddressHeadViewCollectionReusableView.m in Sources */,

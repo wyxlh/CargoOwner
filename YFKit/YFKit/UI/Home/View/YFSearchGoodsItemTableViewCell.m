@@ -40,10 +40,10 @@ static NSString *const cellId = @"YFSearchGoodsItemTableViewCell";
             NSString *goodMsg = [NSString getGoodsName:dmodel.goodName GoodsWeight:dmodel.goodWeight GoodsVolume:dmodel.volumeWeight GoodsNum:dmodel.number];
             [goodsMsgList addObject:goodMsg];
         }
+        NSString *goodsMsg = [goodsMsgList componentsJoinedByString:@"\n"];
+        self.goodsName.text = goodsMsg;
         
     }
-    
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
