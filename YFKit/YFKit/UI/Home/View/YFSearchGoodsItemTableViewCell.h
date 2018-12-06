@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *startAddress;
 @property (weak, nonatomic) IBOutlet UILabel *goodsName;
 @property (weak, nonatomic) IBOutlet UILabel *driver;
+@property (weak, nonatomic) IBOutlet UIView *addressView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *addressCons;
 @property (nonatomic, strong) YFSearchDetailModel *model;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

@@ -462,10 +462,13 @@
                 return [NSString stringWithFormat:@"%@/%@",nameArr[1],nameArr[2]];
             }
         }
-        
         if (nameArr.count > 1) {
             return [NSString stringWithFormat:@"%@/%@",nameArr[0],nameArr[1]];
         }
+        if (nameArr.count == 1) {
+            return [nameArr firstObject];
+        }
+        
     }
     return @"";
 }

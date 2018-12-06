@@ -31,6 +31,10 @@ static NSString *const cellId = @"YFSearchGoodsItemTableViewCell";
 - (void)setModel:(YFSearchDetailModel *)model {
     self.startAddress.text = model.startingPlace;
     self.endAddress.text = model.destination;
+    if ([NSString isBlankString:model.startingPlace] && [NSString isBlankString:model.destination]) {
+        self.addressCons.constant = 0;
+        self.addressView.hidden = YES;
+    }
     NSMutableArray *goodsMsgList = [NSMutableArray new];
     if (model.goodInfo.count == 1) {
         goodInfoModel *dmodel = [model.goodInfo firstObject];

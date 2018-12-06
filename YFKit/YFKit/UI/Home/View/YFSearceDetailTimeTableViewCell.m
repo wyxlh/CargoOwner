@@ -39,7 +39,7 @@ static NSString *const cellID = @"YFSearceDetailTimeTableViewCell";
 
 - (void)setModel:(detailsModel *)model {
     //只有订单所有者才能查看签收单
-    if ([model.status containsString:@"签收"] && [self.creator isEqualToString:[UserData userInfo].userId]) {
+    if (([model.status containsString:@"签收"] || [model.describe containsString:@"签收"])&& [self.creator isEqualToString:[UserData userInfo].userId]) {
         self.lookBtn.hidden      = NO;
         self.btnWidth.constant   = 72.0f;
     }else {

@@ -89,7 +89,7 @@
     
     if (self.dataArr.count == 0) {
         //当没有数据的时候
-        [YFToast showMessage:@"暂无数据" inView:self.view];
+        [YFToast showMessage:@"没有要查询的数据,请查看单号是否填写正确" inView:self.view];
 //        [self.dataArr removeAllObjects];
 //        [self.tableView reloadData];
     }else{
