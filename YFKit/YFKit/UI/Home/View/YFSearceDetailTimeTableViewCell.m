@@ -41,7 +41,7 @@ static NSString *const cellID = @"YFSearceDetailTimeTableViewCell";
     //只有订单所有者才能查看签收单
     if (([model.status containsString:@"签收"] || [model.describe containsString:@"签收"])&& [self.creator isEqualToString:[UserData userInfo].userId]) {
         self.lookBtn.hidden      = NO;
-        self.btnWidth.constant   = 72.0f;
+        self.btnWidth.constant   = 88.0f;
     }else {
         self.lookBtn.hidden      = YES;
         self.btnWidth.constant   = CGFLOAT_MIN;

@@ -21,6 +21,7 @@
 #import "YFReleseDetailModel.h"
 #import "YFChooseAddressView.h"
 #import "YFInverGeoModel.h"
+#import "YFTwoInverGeoModel.h"
 #import "YFUmengTracking.h"
 
 @interface YFReleaseViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -463,22 +464,24 @@
             //地址 code
             if (self.row == 0) {
                 self.startSiteId                = [NSString getCityCode:addressCode];
-            }else{
-                self.endSiteId                  = [NSString getCityCode:addressCode];
-            }
-            //把地址转为经纬度
-            [[YFInverGeoModel sharedYFInverGeoModel] getLatitudeAndlongitudeWithAddress:model.placeholder];
-            [YFInverGeoModel sharedYFInverGeoModel].latitudeAndlongitudeBlock = ^(CGFloat latitude, CGFloat longitude){
-                if (self.row == 0) {
+                //把地址转为经纬度
+                [[YFInverGeoModel sharedYFInverGeoModel] getLatitudeAndlongitudeWithAddress:model.placeholder];
+                [YFInverGeoModel sharedYFInverGeoModel].latitudeAndlongitudeBlock = ^(CGFloat latitude, CGFloat longitude){
                     //出发地
                     self.startSiteLatitude      = latitude;
                     self.startSiteLongitude     = longitude;
-                }else{
+                };
+            }else{
+                self.endSiteId                  = [NSString getCityCode:addressCode];
+                //把地址转为经纬度
+                [[YFTwoInverGeoModel sharedYFTwoInverGeoModel] getLatitudeAndlongitudeWithAddress:model.placeholder];
+                [YFTwoInverGeoModel sharedYFTwoInverGeoModel].latitudeAndlongitudeBlock = ^(CGFloat latitude, CGFloat longitude){
                     //目的地
                     self.endSiteLatitude        = latitude;
                     self.endSiteLongitude       = longitude;
-                }
-            };
+                };
+            }
+            
             [self reloadTableItemCell:self.section row:self.row];
         };
         [YFWindow addSubview:_addressView];

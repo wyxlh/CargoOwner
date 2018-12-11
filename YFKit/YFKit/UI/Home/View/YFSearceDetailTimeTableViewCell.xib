@@ -68,12 +68,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIf-pE-kw8">
-                        <rect key="frame" x="171" y="13" width="72" height="29"/>
+                        <rect key="frame" x="171" y="13" width="88" height="29"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="72" id="AWw-V9-Uu4"/>
+                            <constraint firstAttribute="width" constant="88" id="AWw-V9-Uu4"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="查看签收单">
+                        <state key="normal" title="查看签收照片">
                             <color key="titleColor" red="0.85403943061828613" green="0.35782510042190552" blue="0.13774296641349792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
                     </button>

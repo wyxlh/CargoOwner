@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/SourceGoods/Controller/YFReleaseViewController.m"
-            timestampString = "565522177.624557"
+            timestampString = "565771132.714638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
             landmarkName = "-postGoodsSource"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/Order/Controller/YFPlaceOrderViewController.m"
-            timestampString = "565522177.6246769"
+            timestampString = "565771132.714799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "461"
@@ -595,11 +595,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/SourceGoods/Controller/YFReleaseViewController.m"
-            timestampString = "565522177.6254261"
+            timestampString = "565771132.7154011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
             landmarkName = "-againAOrder:"
             landmarkType = "7">
          </BreakpointContent>
@@ -979,7 +979,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/Order/Controller/YFPlaceOrderViewController.m"
-            timestampString = "565522177.626063"
+            timestampString = "565771132.715928"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "455"
@@ -1059,11 +1059,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/SourceGoods/Controller/YFAllSourceGoodsViewController.m"
-            timestampString = "564471176.095652"
+            timestampString = "566098473.293515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-setupContentView"
             landmarkType = "7">
          </BreakpointContent>
@@ -1745,7 +1745,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/UserCenter/Controller/Order/Controller/YFPlaceOrderViewController.m"
-            timestampString = "565522177.627653"
+            timestampString = "565771132.716748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "479"
@@ -2191,11 +2191,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/Home/Controller/YFSearchViewController.m"
-            timestampString = "565682038.4392999"
+            timestampString = "565845279.187108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-reorSearchData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2207,7 +2207,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/Home/Controller/YFSearchViewController.m"
-            timestampString = "565682038.439881"
+            timestampString = "565845279.1877151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -2223,11 +2223,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/Home/Controller/YFSearchDetailViewController.m"
-            timestampString = "565671758.888103"
+            timestampString = "565864965.064588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "-netWork"
             landmarkType = "7">
          </BreakpointContent>
@@ -2239,7 +2239,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/Home/Controller/YFSearchViewController.m"
-            timestampString = "565682038.440282"
+            timestampString = "565845279.1879849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -2270,24 +2270,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YFKit/UI/UserCenter/Controller/Order/Controller/YFLookSignInViewController.m"
-            timestampString = "565665758.878108"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "-netSearchWork"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YFKit/UI/Home/View/YFSearceDetailTimeTableViewCell.m"
-            timestampString = "565696854.1139801"
+            timestampString = "565771132.719092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -2319,7 +2303,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YFKit/UI/Home/View/YFSearceDetailTimeTableViewCell.m"
-            timestampString = "565696854.11414"
+            timestampString = "565771132.719298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -2334,44 +2318,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YFKit/UI/SourceGoods/Controller/YFReleaseViewController.m"
-            timestampString = "565522177.629746"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
-            landmarkName = "-postGoodsSource"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YFKit/UI/UserCenter/Controller/Order/Controller/YFPlaceOrderViewController.m"
-            timestampString = "565522177.629796"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
-            landmarkName = "-postGoodsSource"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YFKit/UI/Home/Controller/YFSearchDetailViewController.m"
-            timestampString = "565671758.888324"
+            timestampString = "565864965.0653369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "-netWork"
             landmarkType = "7">
          </BreakpointContent>
@@ -2453,6 +2405,70 @@
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "-setMainModel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/UI/SourceGoods/Controller/YFReleaseViewController.m"
+            timestampString = "565771132.719605"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/UI/SourceGoods/Controller/YFReleaseViewController.m"
+            timestampString = "565771132.71972"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
+            landmarkName = "-addressView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/UI/SourceGoods/Controller/YFReleaseViewController.m"
+            timestampString = "565771132.7197911"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "480"
+            endingLineNumber = "480"
+            landmarkName = "-addressView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YFKit/UI/Home/Controller/YFSearchViewController.m"
+            timestampString = "565845279.188341"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-netSearchOrderMessageWithKeyWords:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

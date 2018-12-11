@@ -32,6 +32,7 @@
     [parms safeSetObject:self.billId forKey:@"billId"];
     [parms safeSetObject:self.syscode forKey:@"sysCode"];
     [parms safeSetObject:self.type forKey:@"type"];
+    [parms safeSetObject:self.Id forKey:@"Id"];
     @weakify(self)
     [WKRequest getWithURLString:@"bill/v114/search/bill/info.do?" parameters:parms success:^(WKBaseModel *baseModel) {
         @strongify(self)
@@ -87,9 +88,8 @@
         [[[cell.lookBtn rac_signalForControlEvents:UIControlEventTouchUpInside]     takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
             @strongify(self)
             YFLookSignInViewController *look   = [YFLookSignInViewController new];
-            look.taskId                        = self.billId;
             look.isSearchLookType              = YES;
-            look.orderNum(self.billId).typeId(self.mainModel.billWRType).sysCodeId(self.syscode);
+            look.orderNum(self.mainModel.billWRId).typeId(self.mainModel.billWRType).sysCodeId(self.syscode);
             [self.navigationController pushViewController:look animated:YES];
         }];
         return cell;
@@ -128,6 +128,15 @@
     return ^(NSString *type){
         @strongify(self)
         self.type = type;
+        return self;
+    };
+}
+
+- (YFSearchDetailViewController * _Nonnull (^)(NSString * _Nonnull))IdBlock {
+    @weakify(self)
+    return ^(NSString *Id){
+        @strongify(self)
+        self.Id = Id;
         return self;
     };
 }

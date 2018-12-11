@@ -14,9 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *billId;
 @property (nonatomic, copy) NSString *syscode;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *Id;
 @property (nonatomic, copy, readonly) YFSearchDetailViewController *(^billIdBlock)(NSString *billId);
 @property (nonatomic, copy, readonly) YFSearchDetailViewController *(^syscodeBlock)(NSString *syscode);
 @property (nonatomic, copy, readonly) YFSearchDetailViewController *(^typeBlock)(NSString *type);
+@property (nonatomic, copy, readonly) YFSearchDetailViewController *(^IdBlock)(NSString *Id);
 @end
 
 NS_ASSUME_NONNULL_END

@@ -59,7 +59,7 @@
     //跳转到详情
     YFSearchDetailViewController *detail        = [YFSearchDetailViewController new];
     YFSearchListModel *model                    = self.searchType == YFSearchOrderShowResultType ? self.dataArr[indexPath.row] : self.historyArr[indexPath.row];
-    detail.billIdBlock(model.orderNum).syscodeBlock(model.syscode).typeBlock(model.type);
+    detail.billIdBlock(model.orderNum).syscodeBlock(model.syscode).typeBlock(model.type).IdBlock(model.Id);;
     [self.navigationController pushViewController:detail animated:YES];
 }
 
@@ -90,8 +90,6 @@
     if (self.dataArr.count == 0) {
         //当没有数据的时候
         [YFToast showMessage:@"没有要查询的数据,请查看单号是否填写正确" inView:self.view];
-//        [self.dataArr removeAllObjects];
-//        [self.tableView reloadData];
     }else{
         //改变状态
         self.searchType                            = YFSearchOrderShowResultType;
@@ -104,7 +102,8 @@
             [self.searchModel saveData:[self reorSearchData:[self.dataArr firstObject]]];
             YFSearchDetailViewController *detail        = [YFSearchDetailViewController new];
             YFSearchListModel *model                    = [self.dataArr firstObject];
-            detail.billIdBlock(model.orderNum).syscodeBlock(model.syscode).typeBlock(model.type);
+            detail.billIdBlock(model.orderNum).syscodeBlock(model.syscode).
+            typeBlock(model.type).IdBlock(model.Id);
             [self.navigationController pushViewController:detail animated:YES];
         }else{
             [self.tableView reloadData];
