@@ -7,8 +7,19 @@
 //
 
 #import "YFAddressListTableViewCell.h"
-#import "YFAddressModel.h"
+
 @implementation YFAddressListTableViewCell
+
+static NSString *const cellId = @"YFAddressListTableViewCell";
+
++ (instancetype)cellWithTableView:(UITableView *)tableView {
+    
+    YFAddressListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"YFAddressListTableViewCell" owner:nil options:nil] firstObject];
+    }
+    return cell;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -22,17 +33,4 @@
     // Configure the view for the selected state
 }
 
--(void)setModel:(YFAddressModel *)model{
-    self.name.text    = model.receiverContacts;
-    self.address.text = [NSString stringWithFormat:@"%@%@",model.receiverCity,[NSString getNullOrNoNull:model.receiverAddr]];
-    self.phone.text   = model.receiverMobile;
-    
-}
-
-
--(void)setCmodel:(YFConsignerModel *)Cmodel{
-    self.name.text    = [NSString getNullOrNoNull:Cmodel.consignerContacts];
-    self.address.text = [NSString stringWithFormat:@"%@%@",Cmodel.consignerCity,[NSString getNullOrNoNull:Cmodel.consignerAddr]];
-    self.phone.text   = [NSString getNullOrNoNull:Cmodel.consignerMobile];
-}
 @end

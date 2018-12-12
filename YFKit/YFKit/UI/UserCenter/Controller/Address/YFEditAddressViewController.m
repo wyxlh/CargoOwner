@@ -8,6 +8,7 @@
 
 #import "YFEditAddressViewController.h"
 #import "YFChooseAddressView.h"
+
 @interface YFEditAddressViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
@@ -53,7 +54,7 @@
             self.phoneTF.text               = [phoneText substringWithRange:NSMakeRange(0, 11)];
         }
     }];
-
+    
     [[self.detailTF rac_textSignal] subscribeNext:^(id x) {
         @strongify(self)
         NSString *detailText               = [NSString stringWithFormat:@"%@",x];
@@ -69,19 +70,11 @@
  编辑地址 重新复制
  */
 - (void)assignment{
-    if (self.aModel && !self.isConsignor) {
-        self.nameTF.text                            = self.aModel.receiverContacts;
-        self.phoneTF.text                           = self.aModel.receiverMobile;
-        self.cityTF.text                            = self.aModel.receiverCity;
-        self.detailTF.text                          = self.aModel.receiverAddr;
-        self.cityCode                               = self.aModel.siteCode;
-    }else if (self.Cmodel && self.isConsignor){
-        self.nameTF.text                            = self.Cmodel.consignerContacts;
-        self.phoneTF.text                           = self.Cmodel.consignerMobile;
-        self.cityTF.text                            = self.Cmodel.consignerCity;
-        self.detailTF.text                          = self.Cmodel.consignerAddr;
-        self.cityCode                               = self.Cmodel.siteCode;
-    }
+    self.nameTF.text                            = self.aModel.receiverContacts;
+    self.phoneTF.text                           = self.aModel.receiverMobile;
+    self.cityTF.text                            = self.aModel.receiverCity;
+    self.detailTF.text                          = self.aModel.receiverAddr;
+    self.cityCode                               = self.aModel.siteCode;
 }
 
 
@@ -137,7 +130,7 @@
         [parms safeSetObject:self.cityCode forKey:@"siteCode"];
         [parms safeSetObject:self.detailTF.text forKey:@"consignerAddr"];
         if (self.isEdit) {
-            [parms safeSetObject:self.Cmodel.Id forKey:@"id"];
+            [parms safeSetObject:self.aModel.Id forKey:@"id"];
         }
         [parms safeSetObject:self.phoneTF.text forKey:@"consignerMobile"];
         [parms safeSetObject:self.nameTF.text forKey:@"consignerContacts"];

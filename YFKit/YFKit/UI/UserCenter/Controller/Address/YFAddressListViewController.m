@@ -12,15 +12,19 @@
 #import "YFAddressFooterView.h"
 #import "YFCreateAddressView.h"
 #import "YFAddressModel.h"
+#import "YFAddressDataTool.h"
+#import "YFAddressPresenter.h"
+
 @interface YFAddressListViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong, nullable) UITableView *tableView;
 @property (nonatomic, strong, nullable) YFCreateAddressView *rfooterView;
-@property (nonatomic, strong, nullable) NSArray *dataArr;
+@property (nonatomic, strong, nullable) NSArray <YFAddressPresenter *> *presenterMs;
 @property (nonatomic, strong, nullable) YFNullView *nullView;
 @end
 
 @implementation YFAddressListViewController
 
+#pragma mark 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title                              = self.isConsignor ? @"发货地址管理" : @"收货地址管理";
@@ -28,82 +32,86 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self netWork];
+    [self loadData];
 }
 
-#pragma mark netWork
-- (void)netWork{
-    NSString *path                          = self.isConsignor ? @"userConsigner/list.do" : @"userReceiver/list.do";
-    @weakify(self)
-    [WKRequest getWithURLString:path parameters:nil success:^(WKBaseModel *baseModel) {
-        @strongify(self)
-        [self.nullView removeFromSuperview];
-        self.nullView                       = nil;
-        if (CODE_ZERO) {
-            if (self.isConsignor) {
-                self.dataArr                = [YFConsignerModel mj_objectArrayWithKeyValuesArray:baseModel.data];
-            }else{
-                self.dataArr                = [YFAddressModel mj_objectArrayWithKeyValuesArray:baseModel.data];
+#pragma mark 私有方法
+- (void)loadData {
+    if (self.isConsignor) {
+        @weakify(self)
+        [[YFAddressDataTool shareInstance] getSendAddress:^(NSArray<YFAddressModel *> * _Nonnull models) {
+            @strongify(self)
+            NSMutableArray *ps = [NSMutableArray array];
+            for (YFAddressModel *model in models) {
+                YFAddressPresenter *p = [[YFAddressPresenter alloc] init];
+                p.model = model;
+                [ps addObject:p];
             }
-            
-        }else{
-            
-        }
-        [self.tableView reloadData];
-        if (self.dataArr.count == 0) {
-            self.nullView.hidden             = NO;
-        }
-    } failure:^(NSError *error) {
-        
-    }];
+            self.presenterMs = ps;
+        }];
+    }else {
+        [[YFAddressDataTool shareInstance] getReceiverAddress:^(NSArray<YFAddressModel *> * _Nonnull models) {
+            NSMutableArray *ps = [NSMutableArray array];
+            for (YFAddressModel *model in models) {
+                YFAddressPresenter *p = [[YFAddressPresenter alloc] init];
+                p.model = model;
+                [ps addObject:p];
+            }
+            self.presenterMs = ps;
+        }];
+    }
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArr.count;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    self.nullView.hidden = self.presenterMs.count == 0 ? NO : YES;
+    return self.presenterMs.count;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    YFAddressListTableViewCell *cell            = [tableView dequeueReusableCellWithIdentifier:@"YFAddressListTableViewCell" forIndexPath:indexPath];
-    if (self.isConsignor) {
-        cell.Cmodel                             = self.dataArr[indexPath.section];
-    }else{
-        cell.model                              = self.dataArr[indexPath.section];
-    }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    YFAddressListTableViewCell *cell            = [YFAddressListTableViewCell cellWithTableView:tableView];
+    YFAddressPresenter *p                       = self.presenterMs[indexPath.section];
+    
+    //绑定 cell
+    [p bindToCell:cell];
     return cell;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    YFAddressFooterView *footerView             = [[[NSBundle mainBundle] loadNibNamed:@"YFAddressFooterView" owner:nil options:nil] lastObject];
-    footerView.isConsignor                      = self.isConsignor;
-    if (self.isConsignor) {
-        footerView.Cmodel                       = self.dataArr[section];
-    }else{
-        footerView.model                        = self.dataArr[section];
-    }
-    footerView.superVC                          = self;
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    YFAddressFooterView *footerView = [YFAddressFooterView loadFooterView];
+    YFAddressPresenter *p = self.presenterMs[section];
+    
+    [p bindToFooterView:footerView];
     @weakify(self)
-    footerView.refreshBlock                     = ^{
+    footerView.refreshBlock = ^(NSString *titleString){
         @strongify(self)
-        [self netWork];
+        [p handleFooterViewButton:self buttonTitleString:titleString isConsignor:self.isConsignor resultBlock:^{
+            [self loadData];
+        }];
+        
     };
     return footerView;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 50.0f;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return section == 0 ? 0.01f : 4.0f;
 }
 
-#pragma mark TableView
--(UITableView *)tableView{
+#pragma mark get  set
+- (void)setPresenterMs:(NSArray<YFAddressPresenter *> *)presenterMs {
+    _presenterMs = presenterMs;
+    [self.tableView reloadData];
+}
+
+- (UITableView *)tableView {
     if (!_tableView) {
         _tableView                              = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-NavHeight-self.rfooterView.height) style:UITableViewStyleGrouped];
         _tableView.delegate                     = self;
@@ -112,14 +120,12 @@
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.separatorStyle               = 0;
-        [_tableView registerNib:[UINib nibWithNibName:@"YFAddressListTableViewCell" bundle:nil] forCellReuseIdentifier:@"YFAddressListTableViewCell"];
         [self.view addSubview:_tableView];
     }
     return _tableView;
 }
 
-#pragma mark footerView
--(YFCreateAddressView *)rfooterView{
+- (YFCreateAddressView *)rfooterView {
     if (!_rfooterView) {
         _rfooterView                             = [[[NSBundle mainBundle] loadNibNamed:@"YFCreateAddressView" owner:nil options:nil] lastObject];
         _rfooterView.frame                       = CGRectMake(0, ScreenHeight-NavHeight-50, ScreenWidth, 50);
@@ -137,8 +143,7 @@
     return _rfooterView;
 }
 
-#pragma mark  nullView
--(YFNullView *)nullView{
+- (YFNullView *)nullView {
     if (!_nullView) {
         _nullView                                = [[[NSBundle mainBundle] loadNibNamed:@"YFNullView" owner:nil options:nil] lastObject];
         _nullView.frame                          = CGRectMake(0, 0, ScreenWidth, self.tableView.height);

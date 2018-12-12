@@ -7,6 +7,8 @@
 //
 
 #import "JMUpdataImage.h"
+#import <AVFoundation/AVCaptureDevice.h>
+#import <AVFoundation/AVMediaFormat.h>
 
 @interface JMUpdataImage()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>{
     UIViewController *ViewC;
@@ -18,13 +20,17 @@
 
 -(instancetype)init{
     if (self=[super init]) {
-        self.tag=100;
+        self.tag = 100;
     }
     return self;
 }
 
 -(void)camera:(UIViewController*)ViewController{
     ViewC=ViewController;
+    //如果没有相机权限 给出提示
+    if (![self isAllowOpenCamera]) {
+        [self showAlert];
+    }
     [ViewC.view addSubview:self];
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];//初始化
@@ -65,8 +71,6 @@
 
         //设置image的尺寸
         CGSize imagesize = image.size;
-        imagesize.height =500;
-        imagesize.width = 500;
         image = [self imageWithImage:image scaledToSize:imagesize];
         if (self.callBackImage) {
              self.callBackImage([self UIImageToBase64Str:image],image);
@@ -87,10 +91,7 @@
             UIView *view=[ViewC.view  viewWithTag:100];
             [view removeFromSuperview];
         }];
-
-
     }
-
 }
 
 //对图片进行压缩
@@ -126,4 +127,31 @@
     
     return encodedImageStr;
 }
+
+- (void)showAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请在iPhone的'设置-隐私-照片'选项中,允许乾坤货主版访问您手机相机" preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    }];
+    
+    [alert addAction:confirm];
+    
+    [ViewC presentViewController:alert animated:YES completion:nil];
+    return;
+}
+
+/**
+ 查看是否打开相机权限
+ 
+ @return  YES打开 NO没打开
+ */
+- (BOOL)isAllowOpenCamera {
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (status == AVAuthorizationStatusRestricted || status == AVAuthorizationStatusDenied) {
+        return NO;
+    }
+    return YES;
+}
+
 @end

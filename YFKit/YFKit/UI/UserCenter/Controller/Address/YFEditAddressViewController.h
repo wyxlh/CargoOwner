@@ -8,6 +8,7 @@
 
 #import "YFBaseViewController.h"
 #import "YFAddressModel.h"
+
 @interface YFEditAddressViewController : YFBaseViewController
 /**
  是否是编辑地址
@@ -18,5 +19,4 @@
  */
 @property (nonatomic, assign)BOOL isConsignor;
 @property (nonatomic, strong) YFAddressModel *aModel;
-@property (nonatomic, strong) YFConsignerModel *Cmodel;
 @end

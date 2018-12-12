@@ -36,7 +36,10 @@
     [super viewDidLoad];
     [self setUI];
     [self netWork];
+
 }
+
+
 
 -(void)setUI{
     self.title                              = @"个人资料";

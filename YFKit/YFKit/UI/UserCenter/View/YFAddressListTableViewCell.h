@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class YFAddressModel;
-@class YFConsignerModel;
 @interface YFAddressListTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *phone;
 @property (weak, nonatomic) IBOutlet UILabel *address;
-@property (nonatomic, strong) YFAddressModel *model;
-@property (nonatomic, strong) YFConsignerModel *Cmodel;
++ (instancetype)cellWithTableView:(UITableView *)tableView;
 @end

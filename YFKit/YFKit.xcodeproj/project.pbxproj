@@ -100,6 +100,8 @@
 		8823072320D6768000C3423F /* YFChooseAddressListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8823072120D6768000C3423F /* YFChooseAddressListTableViewCell.xib */; };
 		882473D721466AEB006DE56F /* YFGoodsHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 882473D521466AEB006DE56F /* YFGoodsHeadTableViewCell.m */; };
 		882473D821466AEB006DE56F /* YFGoodsHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882473D621466AEB006DE56F /* YFGoodsHeadTableViewCell.xib */; };
+		8824BF8221C0BE51000A1388 /* YFAddressDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8824BF8121C0BE51000A1388 /* YFAddressDataTool.m */; };
+		8824BF8521C0BE62000A1388 /* YFAddressPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8824BF8421C0BE62000A1388 /* YFAddressPresenter.m */; };
 		8828E1D220E1D19F000711DA /* YFCarTypeItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8828E1D020E1D19F000711DA /* YFCarTypeItemCollectionViewCell.m */; };
 		8828E1D320E1D19F000711DA /* YFCarTypeItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8828E1D120E1D19F000711DA /* YFCarTypeItemCollectionViewCell.xib */; };
 		8829789820E088BF003A67F0 /* YFUserNullCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8829789620E088BF003A67F0 /* YFUserNullCollectionViewCell.m */; };
@@ -542,6 +544,10 @@
 		882473D421466AEB006DE56F /* YFGoodsHeadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFGoodsHeadTableViewCell.h; sourceTree = "<group>"; };
 		882473D521466AEB006DE56F /* YFGoodsHeadTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFGoodsHeadTableViewCell.m; sourceTree = "<group>"; };
 		882473D621466AEB006DE56F /* YFGoodsHeadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFGoodsHeadTableViewCell.xib; sourceTree = "<group>"; };
+		8824BF8021C0BE50000A1388 /* YFAddressDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFAddressDataTool.h; sourceTree = "<group>"; };
+		8824BF8121C0BE51000A1388 /* YFAddressDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFAddressDataTool.m; sourceTree = "<group>"; };
+		8824BF8321C0BE62000A1388 /* YFAddressPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFAddressPresenter.h; sourceTree = "<group>"; };
+		8824BF8421C0BE62000A1388 /* YFAddressPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFAddressPresenter.m; sourceTree = "<group>"; };
 		8828E1CF20E1D19F000711DA /* YFCarTypeItemCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFCarTypeItemCollectionViewCell.h; sourceTree = "<group>"; };
 		8828E1D020E1D19F000711DA /* YFCarTypeItemCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFCarTypeItemCollectionViewCell.m; sourceTree = "<group>"; };
 		8828E1D120E1D19F000711DA /* YFCarTypeItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YFCarTypeItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1135,6 +1141,15 @@
 			path = HomeAlertView;
 			sourceTree = "<group>";
 		};
+		8824BF7F21C0BE3E000A1388 /* DataTool */ = {
+			isa = PBXGroup;
+			children = (
+				8824BF8021C0BE50000A1388 /* YFAddressDataTool.h */,
+				8824BF8121C0BE51000A1388 /* YFAddressDataTool.m */,
+			);
+			path = DataTool;
+			sourceTree = "<group>";
+		};
 		882A3B2B20CA119500F382DF /* Query */ = {
 			isa = PBXGroup;
 			children = (
@@ -1306,6 +1321,7 @@
 		8868D1C0209462BA009FB681 /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
+				8824BF7F21C0BE3E000A1388 /* DataTool */,
 				8868D1C1209462BA009FB681 /* Controller */,
 				88DA6DE720C8FD5F0095C634 /* ViewModel */,
 				8868D1C4209462BA009FB681 /* Model */,
@@ -2094,6 +2110,8 @@
 		88DA6DE720C8FD5F0095C634 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8824BF8321C0BE62000A1388 /* YFAddressPresenter.h */,
+				8824BF8421C0BE62000A1388 /* YFAddressPresenter.m */,
 				88DA6DE820C8FD800095C634 /* YFUserCenterService.h */,
 				88DA6DE920C8FD800095C634 /* YFUserCenterService.m */,
 				88DA6DEB20C8FD920095C634 /* YFUserCenterViewModel.h */,
@@ -2585,6 +2603,7 @@
 				8816FF4B217EEFB000C8F83E /* UIImage+Extension.m in Sources */,
 				8887277E209C624D00C0F551 /* YFChooseDriverHeadView.m in Sources */,
 				8867B5482150AF1200EB4723 /* YFSpecialDetailAddressTableViewCell.m in Sources */,
+				8824BF8221C0BE51000A1388 /* YFAddressDataTool.m in Sources */,
 				8868D1FB20946BD4009FB681 /* YFHomeViewController.m in Sources */,
 				88C3BE8220D8B0D10055E5F8 /* YFAddressModel.m in Sources */,
 				88872756209BF8CE00C0F551 /* YFLookSignInViewController.m in Sources */,
@@ -2640,6 +2659,7 @@
 				88831E4E20D11C2C006E317D /* YFHomeNearMapViewController.m in Sources */,
 				88831E1820D0C873006E317D /* YFAddressListTableViewCell.m in Sources */,
 				88F9BB1320BBDCEF00DB319A /* YukiWebProgressLayer.m in Sources */,
+				8824BF8521C0BE62000A1388 /* YFAddressPresenter.m in Sources */,
 				884A7D24209D9C37007F3908 /* YFToast.m in Sources */,
 				8813358720AA7D0000A8127C /* YFOfferData.m in Sources */,
 				8881AFA2214FB144003E5C26 /* YFSpecialLineDetailViewController.m in Sources */,
